@@ -9,7 +9,7 @@ script:
 - grunt release
 after_success:
 - grunt update-winjs-controls
-- grunt saucelabs --force
+- grunt saucelabs
 env:
   global:
   - SAUCE_USERNAME=winjs
