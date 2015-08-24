@@ -63,8 +63,12 @@
             var component = details.testPageUrl.split('/')[5];
             var browserIndex = getBrowserIndex(details.platform);
             var componentResults = getComponentResults(component);
+            var testPassed = true;
             if (componentResults) {
                 if (details.result && typeof details.result === "object") {
+                    if(details.result.failed > 0){
+                        testPassed = false;
+                    }
                     console.log("======================================================\n" +
                                 "Passed: " + details.result.passed + "\n" +
                                 "Failed: " + details.result.failed + "\n" +
@@ -103,7 +107,7 @@
         } finally {
             // Always indicate that the test passed so that we can finish the grunt task successfully.
             // The config.tests_results object will store the correct information for each the test run.
-            callback(null, true);
+            callback(null, testPassed);
         }
     }
 
