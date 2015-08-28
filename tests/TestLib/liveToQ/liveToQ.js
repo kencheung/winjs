@@ -221,8 +221,7 @@
                 // Omit all but the first few callstacks to keep our results data small.
                 // If it's larger than 64 KB, Saucelabs will ignore it.
                 source: (log.length < 3 && testError.source) ? testError.source.substr(0, 500) : null
-            });
-            
+            });            
             socketSignal && socketSignal(function (socket) {
                 socket.send(JSON.stringify({
                     id: socketId,
@@ -512,7 +511,6 @@
             
             var disabledTestRegistry = testModule.disabledTestRegistry;
             AllObjectKeys(testModule).forEach(function (key) {
-                
                 if(isTestDisabled(disabledTestRegistry, key)){
                     return;
                 }
