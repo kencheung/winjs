@@ -574,7 +574,19 @@ module WinJSTests {
             LiveUnit.LoggingCore.logComment("Test Tear Down...");
             Helper.ListView.Utils.resetDOM();
         }
+        
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:[],
+            chrome:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            safari:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            firefox:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            android:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
 
+        };
         /// -----------------------------------------------------------------------------------------------
         //  Test Methods
         /// -----------------------------------------------------------------------------------------------
