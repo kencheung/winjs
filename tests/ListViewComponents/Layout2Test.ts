@@ -2554,6 +2554,13 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
+        
+        disabledTestRegistry = {
+            safari:["testDefaultItemsContainerMargins"],
+            firefox:["testDefaultItemsContainerMargins"],
+            chrome:["testDefaultItemsContainerMargins"],
+            android:["testDefaultItemsContainerMargins"]
+        }
 
         testAssureMarginRuleSpecificityDoesNotTrumpWin8 = function (complete) {
             // Test can't run with ListView.less.css in effect otherwise one of the rules will

@@ -90,6 +90,19 @@ module AutoSuggestBoxTests {
                 document.body.removeChild(element);
             }
         }
+        
+        disabledTestRegistry = {
+            firefox:["testSuggestionsDisplayed",
+                "testQueryChangeAfterFocusLoss",
+                "testQuerySuggestionSelected",
+                "testResultSuggestionSelected",
+                "testSuggestionSelectionWithNarrator",
+                "testChooseSuggestionOnEnterEnabled",
+                "testArrowKeysOnSuggestionFlyout",
+                "testArrowKeysOnSuggestionFlyoutAbove",
+                ],
+            ie11:["testQueryChangeAfterFocusLoss"]
+        }
 
         // Test functions
         testInitTest = function () {

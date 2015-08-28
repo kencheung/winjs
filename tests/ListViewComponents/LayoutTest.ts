@@ -105,6 +105,39 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
+        
+        testFirstLastDisplayedInGrid
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:["testFirstLastDisplayedInGridLayout_GridLayout"],
+            chrome:[
+                "testRestoringScrollpos",
+                "testHeightAutoLayoutListLayout",
+                "testHeightAutoLayoutGridLayout",
+                "testFirstLastDisplayedInGridLayout_GridLayout"
+                ],
+            safari:[
+                "testRestoringScrollpos",
+                "testHeightAutoLayoutListLayout",
+                "testHeightAutoLayoutGridLayout",
+                "testFirstLastDisplayedInGridLayout_GridLayout"
+                ],
+            firefox:[
+                "testRestoringScrollpos",
+                "testHeightAutoLayoutListLayout",
+                "testHeightAutoLayoutGridLayout",
+                "testFirstLastDisplayedInGridLayout_GridLayout"
+                ],
+            android:[
+                "testRestoringScrollpos",
+                "testHeightAutoLayoutListLayout",
+                "testHeightAutoLayoutGridLayout",
+                "testFirstLastDisplayedInGridLayout_GridLayout"
+                ]
+
+        };
 
         testFirstVisibleInConstructor = function (complete) {
             function test(layoutName) {

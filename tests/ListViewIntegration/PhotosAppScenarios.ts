@@ -98,6 +98,17 @@ module WinJSTests {
                 document.body.removeChild(element);
             }
         }
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:["testSemanticZoomMappingStartGridLayout"],
+            ie10:[],
+            chrome:[],
+            safari:[],
+            firefox:["testSemanticZoomMappingStartGridLayout"],
+            android:[]
+
+        };
 
         testFlipViewBatchInsert(complete) {
             var element = document.getElementById("batchInsert"),

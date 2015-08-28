@@ -94,6 +94,17 @@ module ContentDialogTests {
                 complete();
             });
         }
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:[],
+            chrome:[],
+            safari:[],
+            firefox:["testInitialFocusWithoutFocusableContent", "testInitialFocusWithFocusableContent"],
+            android:[]
+
+        };
     }
 }
 LiveUnit.registerTestClass("ContentDialogTests.FocusTests");

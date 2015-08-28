@@ -56,6 +56,18 @@ module WinJSTests {
                 document.body.removeChild(element);
             }
         }
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:["testEvent_headerfooterevents_Level0"],
+            ie10:[],
+            chrome:[],
+            safari:[],
+            firefox:[],
+            android:[]
+
+        };
+        
     }
 
     function generate(eventName, layoutName, testFunction, options?) {

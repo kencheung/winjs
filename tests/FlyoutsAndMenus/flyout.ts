@@ -706,6 +706,17 @@ module CorsicaTests {
                     complete();
                 });
         }
+        
+         disabledTestRegistry = {
+            all:[],
+            ie11:["testDismissesWhenLosingFocus"],
+            ie10:[],
+            chrome:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
+            safari:[],
+            firefox:[],
+            android:[]
+
+        };
     }
 }
 // register the object as a test class by passing in the name

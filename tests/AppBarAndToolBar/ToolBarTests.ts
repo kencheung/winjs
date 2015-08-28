@@ -2093,6 +2093,17 @@ module CorsicaTests {
             };
             this._element.appendChild(iframe);
         }
+        
+         disabledTestRegistry = {
+            all:[],
+            ie11:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap"],
+            ie10:[],
+            chrome:["testShowOnlyCommands"],
+            safari:["testShowOnlyCommands"],
+            firefox:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap", "testShowOnlyCommands"],
+            android:[]
+
+        };
     }
 }
 LiveUnit.registerTestClass("CorsicaTests.ToolBarTests");

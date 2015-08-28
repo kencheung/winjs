@@ -715,6 +715,28 @@ module WinJSTests {
             WinJS.UI._VirtualizeContentsView._disableCustomPagesPrefetch = defaultDisableCustomPagesPrefetch;
             WinJS.Utilities._setIsiOS(defaultIsiOS);
         };
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:["testDeleteDoesNotLoseFocusRectangle"],
+            ie10:[
+                "testRealizeMoreThanCreated",
+                "testMaxDeferredItemCleanup",
+                "testScrollingDuringLazyCreation"
+                ],
+            chrome:[],
+            safari:[],
+            firefox:[
+                "testDeleteDoesNotLoseFocusRectangle",
+                "testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus",
+                "testMaxDeferredItemCleanup",
+                ],
+            android:[
+                "testMaxDeferredItemCleanup",
+                "testInsertsAnimationStartsBeforeRealizationIsDone"
+                ]
+
+        };
 
         testInitalization = function (complete) {
             function createListView(orientation) {
@@ -5215,6 +5237,8 @@ module WinJSTests {
                 sezo.zoomedOut = true;
             });
         };
+        
+        
 
     }
 

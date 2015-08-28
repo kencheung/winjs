@@ -1202,7 +1202,16 @@ module WinJSTests {
                 });
         };
 
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:[],
+            chrome:[],
+            safari:[],
+            firefox:["testViewportFocus"],
+            android:[]
 
+        };
 
     }
 

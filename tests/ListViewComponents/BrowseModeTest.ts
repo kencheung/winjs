@@ -355,6 +355,18 @@ module WinJSTests {
             var element = document.getElementById("BrowseModeTests");
             document.body.removeChild(element);
         }
+        
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:[],
+            chrome:[],
+            safari:[],
+            firefox:["testTabbingToHeaderFromChildElementDrawsFocusRect"],
+            android:[]
+
+        };
 
         // Test methods
         // Any child objects that start with "test" are automatically test methods

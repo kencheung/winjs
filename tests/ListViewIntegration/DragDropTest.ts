@@ -239,6 +239,38 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
+        
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:[],
+            chrome:[
+                "testUncontiguousSelectionReorderListLayoutVDS_rtl",
+                "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
+                "testUncontiguousSelectionReorderListLayoutBindingList_ltr"
+                ],
+            safari:[
+                "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderListLayoutVDS_rtl",
+                "testUncontiguousSelectionReorderGridLayoutVDS_rtl"
+                ],
+            firefox:[
+                "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderListLayoutVDS_rtl",
+                "testUncontiguousSelectionReorderGridLayoutVDS_rtl"
+                ],
+            android:[
+                "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderListLayoutVDS_rtl",
+                "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
+                ]
+
+        };
+
 
         testGridLayoutHitTest(complete) {
             var largeListView = document.createElement("div");

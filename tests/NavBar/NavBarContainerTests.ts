@@ -45,6 +45,24 @@ module WinJSTests {
                 _element = null;
             }
         };
+        
+        disabledTestRegistry = {
+            firefox: [
+               "testCurrentIndexConstructor",
+               "testCurrentIndexAndMaxRowsConstructor",
+               "testCurrentIndexAndMaxRows",
+               "testArrowKeysPressed",
+               "testKeyboardingHorizontal",
+               "testKeyboardingVertical",
+               "testFocusUpdateOnDataRemove",
+               "testFocusUpdateOnDataChange",
+               "testFocusUpdateOnDataInserts",
+               "testFocusUpdateOnDataReload",
+               "testFocusUpdateOnDataMove",
+               "testSplitToggle",
+               "testChangeLayoutProperty"
+                ]
+        }
 
 
 

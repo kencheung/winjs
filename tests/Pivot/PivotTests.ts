@@ -396,8 +396,6 @@ module WinJSTests {
 
     export class PivotTests {
 
-
-
         setUp() {
             pivotWrapperEl = document.createElement('div');
             pivotWrapperEl.style.cssText = "width: " + pivotWidth + "px; height: 480px; background-color: #777;";
@@ -407,6 +405,15 @@ module WinJSTests {
         tearDown() {
             WinJS.Utilities.disposeSubTree(pivotWrapperEl);
             document.body.removeChild(pivotWrapperEl);
+        }
+        
+        disabledTestRegistry = {
+            ie11:[
+                "testLocked",
+                "testFlip", 
+                "testEmptyPivotRecentersCorrectly", 
+                "testFractionalControlSizeDoesNotCauseInfiniteNavigation"
+                ],
         }
 
         testLoad = function testLoad(complete) {

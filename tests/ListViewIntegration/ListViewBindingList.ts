@@ -270,6 +270,17 @@ module Tests {
             WinJS.Application.stop();
             Helper.cleanupUnhandledErrors();
         }
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:[],
+            chrome:["testListViewWithFilteredListMutation"],
+            safari:[],
+            firefox:[],
+            android:[]
+
+        };
 
 
 

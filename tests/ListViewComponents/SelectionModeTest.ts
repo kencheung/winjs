@@ -413,7 +413,18 @@ module WinJSTests {
             var element = document.getElementById("SelectionModeTests");
             document.body.removeChild(element);
         }
+        
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:["testPickerMultiMode"],
+            chrome:[],
+            safari:[],
+            firefox:[],
+            android:[]
 
+        };
 
 
         testStatic = function () {

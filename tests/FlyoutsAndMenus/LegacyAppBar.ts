@@ -1553,6 +1553,23 @@ module CorsicaTests {
                 complete();
             });
         }
+        
+        disabledTestRegistry = {
+            all:[],
+            ie11:["testDismissesWhenLosingFocus", "testMoveFocusFromMenuToAppBar"],
+            ie10:[],
+            chrome:[
+                "testDismissesWhenLosingFocus",
+                "testRemainsVisibleWhenMovingFocusInternally",
+                "testMoveFocusFromMenuToAppBar",
+                "testFocusLeavesMenuAndAppBar",
+                "testSingleAppBarLightDismissFocusWrapping"
+                ],
+            safari:[],
+            firefox:[],
+            android:[]
+
+        };
     };
 }
 // register the object as a test class by passing in the name

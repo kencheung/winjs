@@ -36,6 +36,13 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
+        
+        disabledTestRegistry = {
+            safari:["testWinBlue_148641"],
+            firefox:["testWinBlue_148641"],
+            chrome:["testWinBlue_148641"],
+            android:["testWinBlue_148641"]
+        }
 
         testWin8_342083 = function (complete) {
             var div = document.createElement("DIV");

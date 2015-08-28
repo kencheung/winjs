@@ -49,7 +49,7 @@ module SearchBoxTests {
                 document.body.removeChild(element);
             }
         }
-
+       
         // Test functions
         testInitTest = function () {
             var searchBox: WinJS.UI.SearchBox = document.getElementById("SearchBoxID").winControl;

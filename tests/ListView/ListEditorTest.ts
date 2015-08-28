@@ -145,6 +145,10 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
+        
+        disabledTestRegistry = {
+            firefox:["testDeleteWrapperSizeDuringAnimationGridLayout"]
+        }
 
         testMoveFocusedItemBeforeReady = function (complete) {
             function renderer(itemPromise) {

@@ -17,6 +17,10 @@ module WinJSTests {
         tearDown() {
             RatingUtils.cleanUp();
         }
+        
+        disabledTestRegistry = {
+            ie11:["testRating_Set_aria_valuenow_Random"]
+        }
 
         //-----------------------------------------------------------------------------------
 
