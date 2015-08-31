@@ -65,9 +65,7 @@ module WinJSTests {
             safari:[],
             firefox:[],
             android:["testEvent_headerfooterevents_Level0"]
-
-        };
-        
+        }; 
     }
 
     function generate(eventName, layoutName, testFunction, options?) {

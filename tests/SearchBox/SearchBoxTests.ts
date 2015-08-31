@@ -53,7 +53,7 @@ module SearchBoxTests {
         disabledTestRegistry = {
             firefox: [
                 "testFocusOnKeyboardInputBringsUpSuggestions",
-                "LegacyClassNames"
+                "testLegacyClassNames"
                 ]
         };
        
