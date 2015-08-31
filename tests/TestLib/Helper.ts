@@ -1555,7 +1555,7 @@ module Helper {
         
         function getDisabledTestList(){
             var disabledList;
-            if(bowser.msie && bowser.version === "10.0"){
+            if (bowser.msie && bowser.version === "10.0"){
                 disabledList = registry.ie10 || [];
             } else if (bowser.msie && bowser.version === "11.0"){
                 disabledList = registry.ie11 || [];
