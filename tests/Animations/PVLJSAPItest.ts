@@ -76,6 +76,10 @@ module WinJSTests {
                 WinJS.UI.enableAnimations();
             }
         }
+        
+        disabledTestRegistry = {
+            ie10:["testSlideLeftOut"]
+        }
 
 
 
