@@ -476,43 +476,9 @@
                 }
             });
             
-           
-            
-            function isTestDisabled(registry, testName){
-                 // Disable tests still using the old method of prefixing the test name with 'x'
-                if (testName.indexOf("test") !== 0) {
-                    return true;
-                }
-                
-                if(!registry){
-                    return false;
-                }
-                
-                if(registry.all && registry.all.indexOf(testName) > -1){
-                    return true;
-                }else if(bowser.msie && bowser.version == 10){
-                    return registry.ie10 && registry.ie10.indexOf(testName) > -1;
-                }else if (bowser.msie && bowser.version == 11){
-                    return registry.ie11 && registry.ie11.indexOf(testName) > -1;
-                }else if (bowser.chrome){
-                    return registry.chrome && registry.chrome.indexOf(testName) > -1;
-                }else if(bowser.safari){
-                    return registry.safari && registry.safari.indexOf(testName) > -1;
-                }else if (bowser.firefox){
-                    return registry.firefox && registry.firefox.indexOf(testName) > -1;
-                }else if (bowser.android){
-                    return registry.android && registry.android.indexOf(testName) > -1;
-                }else if (bowser.msedge){
-                    return registry.edge && registry.edge.indexOf(testName) > -1;
-                }else{
-                    return false;
-                }
-            }
-            
-            var disabledTestRegistry = testModule.disabledTestRegistry;
             AllObjectKeys(testModule).forEach(function (key) {
-                if(isTestDisabled(disabledTestRegistry, key)){
-                    return;
+                if(testName.indexOf("test") !== 0) {
+                    return true;
                 }
 
                 var testName = key.substr("test".length);
