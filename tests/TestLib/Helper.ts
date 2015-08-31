@@ -4,6 +4,9 @@
 // Put non-feature specific functions used in > 1 test file in here to share with other tests
 // and simplify maintenance across tests by avoiding copy/paste.
 //
+
+///<reference path="../../typings/bowser.d.ts"/>
+
 "use strict";
 
 module Helper {
@@ -1524,6 +1527,86 @@ module Helper {
         } else {
             disableTest(Object.getPrototypeOf(testObj), testName);
         }
+    };
+    
+    // Useful for disabling tests in specific browsers. Disables any tests in testObj which 
+    // are in the registry under the current browser.  Example usage:
+    // 
+    // disabledTestRegistry = {
+    //     all:[],
+    //     ie11:[],
+    //     ie10:[],
+    //     chrome:["testNoKeyDSSimulateLiveMailSendListLayout"],
+    //     safari:["testNoKeyDSSimulateLiveMailSendListLayout"],
+    //     firefox:["testNoKeyDSSimulateLiveMailSendListLayout"],
+    //     android:["testNoKeyDSSimulateLiveMailSendListLayout"],
+    //     edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
+    // };
+    // disableTests(ListViewDSTestClass, disabledTestRegistry);
+    export function disableTests(testObj, registry) {
+        
+        if(!registry){
+            return;
+        }
+        
+        if(!testObj){
+            return;
+        }
+        
+        function getDisabledTestList(){
+            var disabledList;
+            if (bowser.msie && bowser.version === "10.0"){
+                disabledList = registry.ie10 || [];
+            } else if (bowser.msie && bowser.version === "11.0"){
+                disabledList = registry.ie11 || [];
+            } else if (bowser.chrome && registry.chrome){
+                disabledList = registry.chrome || [];
+            } else if(bowser.safari && registry.safari){
+                disabledList = registry.safari || [];
+            } else if (bowser.firefox){
+                disabledList = registry.firefox || [];
+            } else if (bowser.android){
+                disabledList = registry.android || [];
+            } else if (bowser.msedge){
+                disabledList = registry.edge || [];
+            } else{
+                disabledList = [];
+            }
+            
+            if(registry.all){
+                for(var i = 0; i < registry.all.length; i++){
+                    if(disabledList.indexOf(registry.all[i]) > -1){
+                        disabledList.concat(registry.all[i]);
+                    }
+                }
+            }
+            return disabledList;
+        }
+        
+        var disabledList = getDisabledTestList();
+        var proto = testObj.prototype; 
+
+        var testKeys = Object.keys(proto);
+        for(var i = 0; i < testKeys.length; i++){
+            var testObjKey = testKeys[i];
+            var index = disabledList.indexOf(testObjKey);
+            if(index > -1){
+                disabledList.splice(index,1);
+                var disabledName = "x" + testObjKey;
+               proto[disabledName] = proto[testObjKey];
+                delete proto[testObjKey];
+            }
+        }
+        
+        if(disabledList.length > 0){
+            var errorString = "Disabling non-existant test(s):";
+            for(var i = 0; i < disabledList.length;i++){
+                errorString += disabledList[i] + " ";
+            }
+            throw errorString;
+        }
+        
+        return;
     };
 
     // Useful for when you have a large number of configurations but don't want to

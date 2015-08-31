@@ -575,18 +575,6 @@ module WinJSTests {
             Helper.ListView.Utils.resetDOM();
         }
         
-        
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:[],
-            chrome:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            safari:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            firefox:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            android:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
-
-        };
         /// -----------------------------------------------------------------------------------------------
         //  Test Methods
         /// -----------------------------------------------------------------------------------------------
@@ -882,10 +870,20 @@ module WinJSTests {
     };
     generateDataSourceChangeSetFocusOnInvalidIndexAndHeightChange("ListLayout");
     generateDataSourceChangeSetFocusOnInvalidIndexAndHeightChange("GridLayout");
+    
+    var disabledTestRegistry = {
+            all:[],
+            ie11:[],
+            ie10:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            chrome:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            safari:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            firefox:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            android:["testNoKeyDSSimulateLiveMailSendListLayout"],
+            edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
 
-    if (!Helper.Browser.isIE11) {
-        Helper.disableTest(ListViewDSTestClass, "testNoKeyDSSimulateLiveMailSendListLayout");
-    }
+        };
+    Helper.disableTests(ListViewDSTestClass, disabledTestRegistry);
+    
 
 }
 // register the object as a test class by passing in the fully qualified name
