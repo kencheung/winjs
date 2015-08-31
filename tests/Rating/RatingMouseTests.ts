@@ -18,6 +18,10 @@ module WinJSTests {
         tearDown() {
             RatingUtils.cleanUp();
         }
+        
+        disabledTestRegistry = {
+            android:["Rating_Click_Random_CustomMax"]
+        }
 
         //-----------------------------------------------------------------------------------
 
@@ -33,11 +37,6 @@ module WinJSTests {
                     )
                 );
         };
-
-
-
-
-
 
 
         //-----------------------------------------------------------------------------------

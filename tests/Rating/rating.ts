@@ -26,6 +26,10 @@ module CorsicaTests {
                 document.body.removeChild(ratingElement);
             }
         }
+        
+        disabledTestRegistry = {
+            ie10:["testRatingPropertiesUpdate"]
+        }
 
         testSimpleRating = function () {
             var rating = new WinJS.UI.Rating();
