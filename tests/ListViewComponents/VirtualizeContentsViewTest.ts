@@ -730,6 +730,7 @@ module WinJSTests {
                 "testDeleteDoesNotLoseFocusRectangle",
                 "testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus",
                 "testMaxDeferredItemCleanup",
+                "testUninitialize"
                 ],
             android:[
                 "testMaxDeferredItemCleanup",

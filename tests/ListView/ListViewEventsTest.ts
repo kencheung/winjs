@@ -58,13 +58,13 @@ module WinJSTests {
         }
         
         disabledTestRegistry = {
-            all:[],
+            all:["testEvent_headerfooterevents_Level2"],
             ie11:["testEvent_headerfooterevents_Level0"],
             ie10:[],
             chrome:[],
             safari:[],
             firefox:[],
-            android:[]
+            android:["testEvent_headerfooterevents_Level0"]
 
         };
         

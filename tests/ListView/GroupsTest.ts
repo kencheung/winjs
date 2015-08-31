@@ -222,6 +222,10 @@ module WinJSTests {
             Helper.cleanupUnhandledErrors();
 
         }
+        
+        disabledTestRegistry = {
+            ie10:["testBigGroupCellSpanningLayout"]
+        }
 
 
 

@@ -796,9 +796,10 @@ module WinJSTests {
             safari:[
                 "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_vertical_",
                 "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_vertical_",
-                "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_vertical_"
+                "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_vertical_",
+                "testOverlappingRemovalsAnimations"
                 ],
-            firefox:[],
+            firefox:["testOverlappingRemovalsAnimations"],
             android:[]   
         };
     }

@@ -248,7 +248,8 @@ module WinJSTests {
             chrome:[
                 "testUncontiguousSelectionReorderListLayoutVDS_rtl",
                 "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
-                "testUncontiguousSelectionReorderListLayoutBindingList_ltr"
+                "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
+                "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
                 ],
             safari:[
                 "testUncontiguousSelectionReorderListLayoutBindingList_ltr",

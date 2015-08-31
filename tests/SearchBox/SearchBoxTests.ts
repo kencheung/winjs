@@ -49,6 +49,13 @@ module SearchBoxTests {
                 document.body.removeChild(element);
             }
         }
+        
+        disabledTestRegistry = {
+            firefox: [
+                "testFocusOnKeyboardInputBringsUpSuggestions",
+                "LegacyClassNames"
+                ]
+        };
        
         // Test functions
         testInitTest = function () {

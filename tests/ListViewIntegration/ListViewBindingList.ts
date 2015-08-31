@@ -276,8 +276,8 @@ module Tests {
             ie11:[],
             ie10:[],
             chrome:["testListViewWithFilteredListMutation"],
-            safari:[],
-            firefox:[],
+            safari:["testListViewWithFilteredListMutation"],
+            firefox:["testListViewWithFilteredListMutation"],
             android:[]
 
         };
