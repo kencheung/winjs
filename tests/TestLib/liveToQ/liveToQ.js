@@ -477,8 +477,8 @@
             });
             
             AllObjectKeys(testModule).forEach(function (key) {
-                if(testName.indexOf("test") !== 0) {
-                    return true;
+                if(key.indexOf("test") !== 0) {
+                    return;
                 }
 
                 var testName = key.substr("test".length);

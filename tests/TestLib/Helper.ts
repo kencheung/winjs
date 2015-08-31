@@ -1557,19 +1557,19 @@ module Helper {
             var disabledList;
             if(bowser.msie && bowser.version === "10.0"){
                 disabledList = registry.ie10 || [];
-            }else if (bowser.msie && bowser.version === "11.0"){
+            } else if (bowser.msie && bowser.version === "11.0"){
                 disabledList = registry.ie11 || [];
-            }else if (bowser.chrome && registry.chrome){
+            } else if (bowser.chrome && registry.chrome){
                 disabledList = registry.chrome || [];
-            }else if(bowser.safari && registry.safari){
+            } else if(bowser.safari && registry.safari){
                 disabledList = registry.safari || [];
-            }else if (bowser.firefox){
+            } else if (bowser.firefox){
                 disabledList = registry.firefox || [];
-            }else if (bowser.android){
+            } else if (bowser.android){
                 disabledList = registry.android || [];
-            }else if (bowser.msedge){
+            } else if (bowser.msedge){
                 disabledList = registry.edge || [];
-            }else{
+            } else{
                 disabledList = [];
             }
             
