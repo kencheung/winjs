@@ -1942,7 +1942,7 @@ module CorsicaTests {
         ie10:[],
         chrome:["testShowOnlyCommands"],
         safari:["testShowOnlyCommands"],
-        firefox:["testOverflowDirectionProperty", "testKeyboardingWithCustomContent", "testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap", "testShowOnlyCommands"],
+        firefox:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap", "testShowOnlyCommands"],
         android:[]
     };
     Helper.disableTests(AppBarTests, disabledTestRegistry);

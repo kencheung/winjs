@@ -259,8 +259,6 @@ module Tests {
 
     export class ListViewIntegrationTestingWithBindingList {
 
-
-
         setUp() {
             WinJS.Application.start();
             Helper.initUnhandledErrors();
@@ -271,7 +269,7 @@ module Tests {
             Helper.cleanupUnhandledErrors();
         }
         
-        testReversingListViewWithListBinding = function (complete) {
+        testReversingListViewWithListBinding(complete) {
             //BugID:  629543
             var sampleDataSource = range(0, 20).map(function (i) { return { title: i, detail: "Javascript Toolkit_" + i }; });
             var list = new WinJS.Binding.List(sampleDataSource);
@@ -295,7 +293,7 @@ module Tests {
                 done(complete);
         }
 
-        testSortingListViewWithListBinding = function (complete) {
+        testSortingListViewWithListBinding(complete) {
             //BugID:  629543
             var sampleDataSource = []
             for (var i = 20; i > 0; i--) {
@@ -324,7 +322,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithEmptyFiltered = function (complete) {
+        testListViewWithEmptyFiltered(complete) {
             //BugID:  629543
             var sampleDataSource = [];
 
@@ -350,7 +348,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithOneElementAndThenDeletedAndThenAdded = function (complete) {
+        testListViewWithOneElementAndThenDeletedAndThenAdded(complete) {
             //BugID:  629543
             var sampleDataSource = [{ title: 3, detail: "hello world" }];
 
@@ -380,7 +378,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithBindingEnabledInSortedList = function (complete) {
+        testListViewWithBindingEnabledInSortedList(complete) {
             //BugID:  629543
             var sampleDataSource = [];
             for (var i = 0; i < 20; i++) {
@@ -413,7 +411,7 @@ module Tests {
                 done(complete);
         }
 
-        testBindingWithFiltered = function (complete) {
+        testBindingWithFiltered(complete) {
             //BugID:  629543
             var sampleDataSource = [];
             for (var i = 0; i < 20; i++) {
@@ -450,7 +448,7 @@ module Tests {
                 done(complete);
         }
 
-        testBindingWithSorted = function (complete) {
+        testBindingWithSorted(complete) {
             //BugID:  629543
             var sampleDataSource = [];
 
@@ -486,7 +484,7 @@ module Tests {
                 done(complete);
         }
 
-        testGroupSorted = function (complete) {
+        testGroupSorted(complete) {
             //BugID:  629543
             var sampleDataSource = range(0, 20).map(function (i) { return { title: i, detail: "Corsica_" + i }; });
 
@@ -534,7 +532,7 @@ module Tests {
         }
 
         // Issue #135
-        xtestGroupSortedWithBinding = function (complete) {
+        xtestGroupSortedWithBinding(complete) {
             //BugID:  629543
             var sampleDataSource = [];
 
@@ -573,7 +571,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithSortedProjectionSpecialCases = function (complete) {
+        testListViewWithSortedProjectionSpecialCases(complete) {
             //BugID:  629543
             var sampleDataSource = [];
             for (var i = 0; i < 10; i++) {
@@ -617,7 +615,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithListMutations = function (complete) {
+        testListViewWithListMutations(complete) {
             //BugID:  629543
             var sampleDataSource = [];
             for (var i = 0; i < 20; i++) {
@@ -658,7 +656,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithSortedListMutations = function (complete) {
+        testListViewWithSortedListMutations(complete) {
             //BugID:  629543
             var sampleDataSource = [];
 
@@ -701,7 +699,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithFilteredListMutation = function (complete) {
+        testListViewWithFilteredListMutation(complete) {
             //BugID:  629543
             var sampleDataSource = [];
             for (var i = 0; i < 20; i++) {
@@ -742,7 +740,7 @@ module Tests {
                 done(complete);
         }
 
-        testListViewWithSpecialGroupSortedCases = function (complete) {
+        testListViewWithSpecialGroupSortedCases(complete) {
             //BugID:  629543
             var list = new WinJS.Binding.List(range(0, 20).map(function (i) { return { title: i, detail: "Corsica_" + i }; }));
             var groupKey = function (item) { return item.title % 2 === 0 ? "even" : "odd"; };
@@ -809,9 +807,9 @@ module Tests {
                 then(resetSeed).
                 then(Helper.validateUnhandledErrorsOnIdle).
                 done(complete);
-        };
+        }
 
-        testListViewUsingGroupSortedWithMutations = function (complete) {
+        testListViewUsingGroupSortedWithMutations(complete) {
             //BugID:  629543
             var sampleDataSource = [];
             for (var i = 0; i < 20; i++) {
@@ -875,7 +873,7 @@ module Tests {
             }
 
         }
-        testAffectedRange = function (complete) {
+        testAffectedRange(complete) {
 
             var rangeTester = {
                 expectedRange: function (start, end) {
