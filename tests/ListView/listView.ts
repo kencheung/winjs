@@ -1202,17 +1202,6 @@ module WinJSTests {
                 });
         };
 
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:[],
-            chrome:[],
-            safari:[],
-            firefox:["testViewportFocus"],
-            android:[]
-
-        };
-
     }
 
     function generateBug17087(layoutName) {
@@ -1888,5 +1877,16 @@ module WinJSTests {
             return result;
         }
     })();
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:[],
+        ie10:[],
+        chrome:[],
+        safari:[],
+        firefox:["testViewportFocus"],
+        android:[]
+    };
+    Helper.disableTests(ListViewTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.ListViewTests");

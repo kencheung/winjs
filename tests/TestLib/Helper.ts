@@ -1546,11 +1546,11 @@ module Helper {
     export function disableTests(testObj, registry) {
         
         if(!registry){
-            return;
+            throw "undefined registry in Helper.disableTests";
         }
         
         if(!testObj){
-            return;
+            throw "undefined testObj in Helper.disableTests";
         }
         
         function getDisabledTestList(){

@@ -17,11 +17,6 @@ module WinJSTests {
         tearDown() {
             RatingUtils.cleanUp();
         }
-        
-        disabledTestRegistry = {
-            ie11:["testRating_Set_aria_valuenow_Random"],
-            ie10:["testRating_Keyboard_Right_Multiple_CustomMax", "testRating_Set_aria_valuenow_Random"]
-        }
 
         //-----------------------------------------------------------------------------------
 
@@ -3181,13 +3176,13 @@ module WinJSTests {
             // Run the test
             RatingUtils.startAsyncEventTest(signalTestCaseCompleted, actions);
         };
-
-
-
-
-
-
     };
+    
+    var disabledTestRegistry = {
+        ie11:["testRating_Set_aria_valuenow_Random"],
+        ie10:["testRating_Keyboard_Right_Multiple_CustomMax", "testRating_Set_aria_valuenow_Random"]
+    };
+    Helper.disableTests(RatingKeyboardTests, disabledTestRegistry);
 }
 // Register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.RatingKeyboardTests");

@@ -76,12 +76,6 @@ module WinJSTests {
                 WinJS.UI.enableAnimations();
             }
         }
-        
-        disabledTestRegistry = {
-            ie10:["testSlideLeftOut"]
-        }
-
-
 
         //This test is to test the slideUp function by passing one element.
         testSlideUp(signalTestCaseCompleted) {
@@ -1595,6 +1589,11 @@ module WinJSTests {
             });
         }
     }
+    
+    var disabledTestRegistry = {
+        ie10:["testSlideLeftOut"]
+    }
+    Helper.disableTests(PVLJSFunctionTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.PVLJSFunctionTests");
 

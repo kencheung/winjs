@@ -413,19 +413,6 @@ module WinJSTests {
             var element = document.getElementById("SelectionModeTests");
             document.body.removeChild(element);
         }
-        
-        
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:["testPickerMultiMode"],
-            chrome:[],
-            safari:[],
-            firefox:[],
-            android:[]
-
-        };
-
 
         testStatic = function () {
             var mode = createMode(createSite({
@@ -953,6 +940,17 @@ module WinJSTests {
         };
     };
     generateDataChangeInSelChangedHandler("GridLayout");
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:[],
+        ie10:["testPickerMultiMode"],
+        chrome:[],
+        safari:[],
+        firefox:[],
+        android:[]
+    };
+    Helper.disableTests(SelectionModeTests, disabledTestRegistry);
 
 }
 // register the object as a test class by passing in the name

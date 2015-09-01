@@ -94,17 +94,6 @@ module WinJSTests {
             WinJS.UI.XYFocus["_listeners"].focuschanging = [];
             WinJS.UI.XYFocus["_listeners"].focuschanged = [];
         }
-        
-        disabledTestRegistry = {
-            safari:["testIFrameRemovalUnregistersWithXYFocus"],
-            chrome:["testIFrameRemovalUnregistersWithXYFocus",
-                "testXYFocusHistory"
-                ],
-            android:[
-                "testIFrameRemovalUnregistersWithXYFocus",
-                "testXYFocusHistory"
-                ]
-        };
 
         testFindNextFocusElement() {
             var layout = createCrossLayout(this.rootContainer);
@@ -743,5 +732,17 @@ module WinJSTests {
             document.documentElement.appendChild(body);
         }
     }
+    
+    var disabledTestRegistry = {
+        safari:["testIFrameRemovalUnregistersWithXYFocus"],
+        chrome:["testIFrameRemovalUnregistersWithXYFocus",
+            "testXYFocusHistory"
+            ],
+        android:[
+            "testIFrameRemovalUnregistersWithXYFocus",
+            "testXYFocusHistory"
+            ]
+    };
+    Helper.disableTests(XYFocusTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.XYFocusTests");

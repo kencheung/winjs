@@ -145,10 +145,6 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
-        
-        disabledTestRegistry = {
-            firefox:["testDeleteWrapperSizeDuringAnimationGridLayout"]
-        }
 
         testMoveFocusedItemBeforeReady = function (complete) {
             function renderer(itemPromise) {
@@ -1235,7 +1231,11 @@ module WinJSTests {
     if (!Helper.Browser.isIE11) {
         Helper.disableTest(ListEditorTest, "testDeleteWrapperSizeDuringAnimation");
     }
-
+    
+    var disabledTestRegistry = {
+        firefox:["testDeleteWrapperSizeDuringAnimationGridLayout"]
+    };
+    Helper.disableTests(ListEditorTest, disabledTestRegistry);
 }
 
 // register the object as a test class by passing in the name

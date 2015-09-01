@@ -2093,17 +2093,17 @@ module CorsicaTests {
             };
             this._element.appendChild(iframe);
         }
-        
-         disabledTestRegistry = {
-            all:[],
-            ie11:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap"],
-            ie10:[],
-            chrome:["testShowOnlyCommands"],
-            safari:["testShowOnlyCommands"],
-            firefox:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap", "testShowOnlyCommands"],
-            android:[]
 
-        };
     }
+    var disabledTestRegistry = {
+        all:[],
+        ie11:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap"],
+        ie10:[],
+        chrome:["testShowOnlyCommands"],
+        safari:["testShowOnlyCommands"],
+        firefox:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap", "testShowOnlyCommands"],
+        android:[]
+    };
+    Helper.disableTests(ToolBarTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("CorsicaTests.ToolBarTests");

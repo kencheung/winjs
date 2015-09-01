@@ -56,16 +56,6 @@ module WinJSTests {
                 document.body.removeChild(element);
             }
         }
-        
-        disabledTestRegistry = {
-            all:["testEvent_headerfooterevents_Level2"],
-            ie11:["testEvent_headerfooterevents_Level0"],
-            ie10:[],
-            chrome:[],
-            safari:[],
-            firefox:[],
-            android:["testEvent_headerfooterevents_Level0"]
-        }; 
     }
 
     function generate(eventName, layoutName, testFunction, options?) {
@@ -288,6 +278,17 @@ module WinJSTests {
         Helper.ListView.runTests(listView, tests);
     };
     generate('headerfooterevents', "GridLayout", headerfooterevents, { skipInitEvents: true });
+    
+    var disabledTestRegistry = {
+        all:["testEvent_headerfooterevents_Level2"],
+        ie11:["testEvent_headerfooterevents_Level0"],
+        ie10:[],
+        chrome:[],
+        safari:[],
+        firefox:[],
+        android:["testEvent_headerfooterevents_Level0"]
+    };
+    Helper.disableTests(ListViewEventsTest, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.ListViewEventsTest");

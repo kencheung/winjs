@@ -36,16 +36,6 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
-        
-        disabledTestRegistry = {
-            all:["testWinBlue_148641"],
-            ie11:["testWin8_725480"],
-            ie10:["testWin8_725480"],
-            safari:["testWin8_725480"],
-            firefox:["testWin8_725480"],
-            chrome:["testWin8_725480"],
-            android:["testWin8_725480"]
-        }
 
         testWin8_342083 = function (complete) {
             var div = document.createElement("DIV");
@@ -714,10 +704,34 @@ module WinJSTests {
 
 
     }
-
-    if (!Helper.Browser.isIE11) {
-        Helper.disableTest(ListViewRegression, "testWinBlue_148641");
+    
+     var disabledTestRegistry = {
+        all:[],
+        ie11:[
+            "testWin8_725480"
+            ],
+        ie10:[
+            "testWin8_725480",
+            "testWinBlue_148641"
+            ],
+        safari:[
+            "testWin8_725480",
+            "testWinBlue_148641"
+            ],
+        firefox:[
+            "testWin8_725480",
+            "testWinBlue_148641"
+            ],
+        chrome:[
+            "testWin8_725480",
+            "testWinBlue_148641"
+            ],
+        android:[
+            "testWin8_725480",
+            "testWinBlue_148641"
+            ]
     }
+    Helper.disableTests(ListViewRegression, disabledTestRegistry);
 
 }
 

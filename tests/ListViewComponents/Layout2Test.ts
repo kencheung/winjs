@@ -2555,13 +2555,6 @@ module WinJSTests {
             document.body.removeChild(testRootEl);
         }
         
-        disabledTestRegistry = {
-            safari:["testDefaultItemsContainerMargins"],
-            firefox:["testDefaultItemsContainerMargins"],
-            chrome:["testDefaultItemsContainerMargins"],
-            android:["testDefaultItemsContainerMargins"]
-        }
-
         testAssureMarginRuleSpecificityDoesNotTrumpWin8 = function (complete) {
             // Test can't run with ListView.less.css in effect otherwise one of the rules will
             // overrule what we are trying to verify in this test.
@@ -2820,10 +2813,15 @@ module WinJSTests {
 
 
     };
-
-    if (!Helper.Browser.isIE11) {
-        Helper.disableTest(LVLayoutTests, "testDefaultItemsContainerMargins");
+    
+    var disabledTestRegistry = {
+        ie10:["testDefaultItemsContainerMargins"],
+        safari:["testDefaultItemsContainerMargins"],
+        firefox:["testDefaultItemsContainerMargins"],
+        chrome:["testDefaultItemsContainerMargins"],
+        android:["testDefaultItemsContainerMargins"]
     }
+    Helper.disableTests(LVLayoutTests, disabledTestRegistry);
 
 }
 

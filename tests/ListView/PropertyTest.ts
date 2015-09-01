@@ -265,17 +265,6 @@ module WinJSTests {
             LiveUnit.Assert.isTrue(listView === testElement.winControl);
             complete();
         }
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:[],
-            chrome:["testGetAndSet_indexOfFirstVisible"],
-            safari:["testGetAndSet_indexOfFirstVisible"],
-            firefox:["testGetAndSet_indexOfFirstVisible"],
-            android:["testGetAndSet_indexOfFirstVisible"]
-
-        };
-        
     }
 
     (function generatePropertyTests() {
@@ -322,6 +311,17 @@ module WinJSTests {
             })(i);
         }
     })();
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:[],
+        ie10:[],
+        chrome:["testGetAndSet_indexOfFirstVisible"],
+        safari:["testGetAndSet_indexOfFirstVisible"],
+        firefox:["testGetAndSet_indexOfFirstVisible"],
+        android:["testGetAndSet_indexOfFirstVisible"]
+    };
+    Helper.disableTests(PropertyTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.PropertyTests");

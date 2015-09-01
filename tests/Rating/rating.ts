@@ -27,10 +27,6 @@ module CorsicaTests {
             }
         }
         
-        disabledTestRegistry = {
-            ie10:["testRatingPropertiesUpdate"]
-        }
-
         testSimpleRating = function () {
             var rating = new WinJS.UI.Rating();
             LiveUnit.Assert.areEqual(5, rating.maxRating, "default should be 5");
@@ -180,6 +176,10 @@ module CorsicaTests {
             rating.dispose();
         }
     }
+    var disabledTestRegistry = {
+        ie10:["testRatingPropertiesUpdate"]
+    };
+    Helper.disableTests(RatingTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("CorsicaTests.RatingTests");

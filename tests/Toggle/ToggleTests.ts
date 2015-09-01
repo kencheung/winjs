@@ -229,17 +229,18 @@ module WinJSTests {
                 LiveUnit.Assert.isTrue(changedEventFired, 'Toggle should fire change event when toggled');
             });
         }
-        
-        disabledTestRegistry = {
-            all:[],
-            ie11:["testThumbDragToOtherSide"],
-            ie10:[],
-            chrome:[],
-            safari:[],
-            firefox:[],
-            android:[]
-        };
     }
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:["testThumbDragToOtherSide"],
+        ie10:[],
+        chrome:[],
+        safari:[],
+        firefox:[],
+        android:[]
+    };
+    Helper.disableTests(ToggleSwitchTests, disabledTestRegistry);
 
 }
 

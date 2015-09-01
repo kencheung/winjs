@@ -89,23 +89,6 @@ module WinJSTests {
                 document.body.removeChild(element);
             }
         }
-        
-        disabledTestRegistry = {
-            safari:[
-                "testDelayedEntranceAnimationGridLayout",
-                "testSkippedContentTransitionGridLayout",
-                "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"],
-            chrome:[
-                "testDelayedEntranceAnimationGridLayout",
-                "testSkippedContentTransitionGridLayout",
-                "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"
-                ],
-            android:[
-                "testDelayedEntranceAnimationGridLayout",
-                "testSkippedContentTransitionGridLayout",
-                "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"
-                ]
-        }
     };
 
     function generateDelayedEntranceAnimation(layoutName) {
@@ -417,6 +400,22 @@ module WinJSTests {
         };
     };
     generateAnimationEventsWithAnimationsDisabled("GridLayout");
-
+    var disabledTestRegistry = {
+        safari:[
+            "testDelayedEntranceAnimationGridLayout",
+            "testSkippedContentTransitionGridLayout",
+            "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"],
+        chrome:[
+            "testDelayedEntranceAnimationGridLayout",
+            "testSkippedContentTransitionGridLayout",
+            "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"
+            ],
+        android:[
+            "testDelayedEntranceAnimationGridLayout",
+            "testSkippedContentTransitionGridLayout",
+            "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"
+            ]
+    }
+    Helper.disableTests(ListViewAnimationTest, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.ListViewAnimationTest");

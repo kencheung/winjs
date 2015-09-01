@@ -223,12 +223,6 @@ module WinJSTests {
 
         }
         
-        disabledTestRegistry = {
-            ie10:["testBigGroupCellSpanningLayout"]
-        }
-
-
-
         // Verifies that when you read indexOfFirstVisible after setting it, it returns the
         // value that you set it to. It verifies this under the following conditions:
         //  - win-groupleader has no margins
@@ -1511,6 +1505,11 @@ module WinJSTests {
         GroupsTests.prototype[testName].timeout = 60000;
     };
     generateLoadingStateScrolling("GridLayout");
+    
+    var disabledTestRegistry = {
+        ie10:["testBigGroupCellSpanningLayout"]
+    };
+    Helper.disableTests(GroupsTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.GroupsTests");

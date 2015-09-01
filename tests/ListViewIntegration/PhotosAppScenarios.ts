@@ -99,17 +99,6 @@ module WinJSTests {
             }
         }
         
-        disabledTestRegistry = {
-            all:[],
-            ie11:["testSemanticZoomMappingStartGridLayout"],
-            ie10:[],
-            chrome:[],
-            safari:[],
-            firefox:["testSemanticZoomMappingStartGridLayout"],
-            android:[]
-
-        };
-
         testFlipViewBatchInsert(complete) {
             var element = document.getElementById("batchInsert"),
                 dsCount = 100,
@@ -357,8 +346,16 @@ module WinJSTests {
         PhotosAppScenarios.prototype["testListViewTemplateContentSwap"] = foo(WinJS.UI.ListView);
     })();
 
-
-
+    var disabledTestRegistry = {
+        all:[],
+        ie11:["testSemanticZoomMappingStartGridLayout"],
+        ie10:[],
+        chrome:[],
+        safari:[],
+        firefox:["testSemanticZoomMappingStartGridLayout"],
+        android:[]
+    };
+    Helper.disableTests(PhotosAppScenarios,disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.PhotosAppScenarios");

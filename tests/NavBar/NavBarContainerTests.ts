@@ -46,26 +46,6 @@ module WinJSTests {
             }
         };
         
-        disabledTestRegistry = {
-            firefox: [
-               "testCurrentIndexConstructor",
-               "testCurrentIndexAndMaxRowsConstructor",
-               "testCurrentIndexAndMaxRows",
-               "testArrowKeysPressed",
-               "testKeyboardingHorizontal",
-               "testKeyboardingVertical",
-               "testFocusUpdateOnDataRemove",
-               "testFocusUpdateOnDataChange",
-               "testFocusUpdateOnDataInserts",
-               "testFocusUpdateOnDataReload",
-               "testFocusUpdateOnDataMove",
-               "testSplitToggle",
-               "testChangeLayoutProperty"
-                ]
-        }
-
-
-
         testHiddenNavContainer = function () {
             var navbarContainerEl = document.createElement('div');
             _element.appendChild(navbarContainerEl);
@@ -1008,6 +988,25 @@ module WinJSTests {
                 complete();
             });
         }
-};
+    };
+    
+    var disabledTestRegistry = {
+        firefox: [
+            "testCurrentIndexConstructor",
+            "testCurrentIndexAndMaxRowsConstructor",
+            "testCurrentIndexAndMaxRows",
+            "testArrowKeysPressed",
+            "testKeyboardingHorizontal",
+            "testKeyboardingVertical",
+            "testFocusUpdateOnDataRemove",
+            "testFocusUpdateOnDataChange",
+            "testFocusUpdateOnDataInserts",
+            "testFocusUpdateOnDataReload",
+            "testFocusUpdateOnDataMove",
+            "testSplitToggle",
+            "testChangeLayoutProperty"
+            ]
+    };
+    Helper.disableTests(NavBarContainerTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.NavBarContainerTests");

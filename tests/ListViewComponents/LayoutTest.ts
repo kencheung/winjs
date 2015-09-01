@@ -107,37 +107,6 @@ module WinJSTests {
         }
         
         testFirstLastDisplayedInGrid
-        
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:["testFirstLastDisplayedInGridLayout_GridLayout"],
-            chrome:[
-                "testRestoringScrollpos",
-                "testHeightAutoLayoutListLayout",
-                "testHeightAutoLayoutGridLayout",
-                "testFirstLastDisplayedInGridLayout_GridLayout"
-                ],
-            safari:[
-                "testRestoringScrollpos",
-                "testHeightAutoLayoutListLayout",
-                "testHeightAutoLayoutGridLayout",
-                "testFirstLastDisplayedInGridLayout_GridLayout"
-                ],
-            firefox:[
-                "testRestoringScrollpos",
-                "testHeightAutoLayoutListLayout",
-                "testHeightAutoLayoutGridLayout",
-                "testFirstLastDisplayedInGridLayout_GridLayout"
-                ],
-            android:[
-                "testRestoringScrollpos",
-                "testHeightAutoLayoutListLayout",
-                "testHeightAutoLayoutGridLayout",
-                "testFirstLastDisplayedInGridLayout_GridLayout"
-                ]
-
-        };
 
         testFirstVisibleInConstructor = function (complete) {
             function test(layoutName) {
@@ -1317,17 +1286,39 @@ module WinJSTests {
     };
     generateRecalculateItemPosition("GridLayout");
 
-
-    if (!Helper.Browser.isIE11) {
-        Helper.disableTest(LayoutTestsExtra, "testFirstLastDisplayedInGridLayout_GridLayout");
-        Helper.disableTest(LayoutTestsExtra, "testHeightAutoLayoutGridLayout");
-        Helper.disableTest(LayoutTestsExtra, "testHeightAutoLayoutListLayout");
-        Helper.disableTest(LayoutTestsExtra, "testRestoringScrollpos");
-    }
+    var disabledTestRegistry = {
+        all:[],
+        ie11:[],
+        ie10:["testFirstLastDisplayedInGridLayout_GridLayout"],
+        chrome:[
+            "testRestoringScrollpos",
+            "testHeightAutoLayoutListLayout",
+            "testHeightAutoLayoutGridLayout",
+            "testFirstLastDisplayedInGridLayout_GridLayout"
+            ],
+        safari:[
+            "testRestoringScrollpos",
+            "testHeightAutoLayoutListLayout",
+            "testHeightAutoLayoutGridLayout",
+            "testFirstLastDisplayedInGridLayout_GridLayout"
+            ],
+        firefox:[
+            "testRestoringScrollpos",
+            "testHeightAutoLayoutListLayout",
+            "testHeightAutoLayoutGridLayout",
+            "testFirstLastDisplayedInGridLayout_GridLayout"
+            ],
+        android:[
+            "testRestoringScrollpos",
+            "testHeightAutoLayoutListLayout",
+            "testHeightAutoLayoutGridLayout",
+            "testFirstLastDisplayedInGridLayout_GridLayout"
+            ]
+    };
+    
+    Helper.disableTests(LayoutTestsExtra, disabledTestRegistry);
 
 }
-
-
 
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.LayoutTestsExtra");

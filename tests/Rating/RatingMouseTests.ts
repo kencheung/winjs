@@ -19,10 +19,6 @@ module WinJSTests {
             RatingUtils.cleanUp();
         }
         
-        disabledTestRegistry = {
-            android:["Rating_Click_Random_CustomMax"]
-        }
-
         //-----------------------------------------------------------------------------------
 
         testRating_Hover_Lowest = function (signalTestCaseCompleted) {
@@ -1266,9 +1262,12 @@ module WinJSTests {
             // Run the test
             RatingUtils.startAsyncEventTest(signalTestCaseCompleted, actions);
         };
-
-
     };
+    
+    var disabledTestRegistry = {
+        android:["Rating_Click_Random_CustomMax"]
+    };
+    Helper.disableTests(RatingMouseTests, disabledTestRegistry);
 }
 // Register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.RatingMouseTests");

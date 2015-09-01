@@ -91,19 +91,6 @@ module AutoSuggestBoxTests {
             }
         }
         
-        disabledTestRegistry = {
-            firefox:["testSuggestionsDisplayed",
-                "testQueryChangeAfterFocusLoss",
-                "testQuerySuggestionSelected",
-                "testResultSuggestionSelected",
-                "testSuggestionSelectionWithNarrator",
-                "testChooseSuggestionOnEnterEnabled",
-                "testArrowKeysOnSuggestionFlyout",
-                "testArrowKeysOnSuggestionFlyoutAbove",
-                ],
-            ie11:["testQueryChangeAfterFocusLoss"]
-        }
-
         // Test functions
         testInitTest = function () {
             var asb: WinJS.UI.PrivateAutoSuggestBox = document.getElementById("ASBID").winControl;
@@ -927,5 +914,20 @@ module AutoSuggestBoxTests {
             asb._inputElement.focus();
         }
     };
+    
+    var disabledTestRegistry = {
+        firefox:["testSuggestionsDisplayed",
+            "testQueryChangeAfterFocusLoss",
+            "testQuerySuggestionSelected",
+            "testResultSuggestionSelected",
+            "testSuggestionSelectionWithNarrator",
+            "testChooseSuggestionOnEnterEnabled",
+            "testArrowKeysOnSuggestionFlyout",
+            "testArrowKeysOnSuggestionFlyoutAbove",
+            ],
+        ie11:["testQueryChangeAfterFocusLoss"]
+    }
+    Helper.disableTests(AutoSuggestBoxTests, disabledTestRegistry);
+
 }
 LiveUnit.registerTestClass("AutoSuggestBoxTests.AutoSuggestBoxTests");

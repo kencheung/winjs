@@ -706,18 +706,18 @@ module CorsicaTests {
                     complete();
                 });
         }
-        
-         disabledTestRegistry = {
-            all:[],
-            ie11:["testDismissesWhenLosingFocus"],
-            ie10:[],
-            chrome:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
-            safari:[],
-            firefox:[],
-            android:[]
-
-        };
     }
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:["testDismissesWhenLosingFocus"],
+        ie10:[],
+        chrome:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
+        safari:[],
+        firefox:[],
+        android:[]
+    };
+    Helper.disableTests(FlyoutTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("CorsicaTests.FlyoutTests");

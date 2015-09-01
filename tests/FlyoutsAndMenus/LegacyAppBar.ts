@@ -1552,25 +1552,25 @@ module CorsicaTests {
                 LiveUnit.Assert.areEqual(beforeFocus.overFlowWidth, afterFocus.overFlowWidth, "Focusing a secondary command element should not resize the OverFlowArea.");
                 complete();
             });
-        }
-        
-        disabledTestRegistry = {
-            all:[],
-            ie11:["testDismissesWhenLosingFocus", "testMoveFocusFromMenuToAppBar"],
-            ie10:[],
-            chrome:[
-                "testDismissesWhenLosingFocus",
-                "testRemainsVisibleWhenMovingFocusInternally",
-                "testMoveFocusFromMenuToAppBar",
-                "testFocusLeavesMenuAndAppBar",
-                "testSingleAppBarLightDismissFocusWrapping"
-                ],
-            safari:[],
-            firefox:[],
-            android:[]
-
-        };
+        }      
     };
+    
+     var disabledTestRegistry = {
+        all:[],
+        ie11:["testDismissesWhenLosingFocus", "testMoveFocusFromMenuToAppBar"],
+        ie10:[],
+        chrome:[
+            "testDismissesWhenLosingFocus",
+            "testRemainsVisibleWhenMovingFocusInternally",
+            "testMoveFocusFromMenuToAppBar",
+            "testFocusLeavesMenuAndAppBar",
+            "testSingleAppBarLightDismissFocusWrapping"
+            ],
+        safari:[],
+        firefox:[],
+        android:[]
+    };
+    Helper.disableTests(LegacyAppBarTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("CorsicaTests.LegacyAppBarTests");

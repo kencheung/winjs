@@ -271,19 +271,6 @@ module Tests {
             Helper.cleanupUnhandledErrors();
         }
         
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:[],
-            chrome:["testListViewWithFilteredListMutation"],
-            safari:["testListViewWithFilteredListMutation"],
-            firefox:["testListViewWithFilteredListMutation"],
-            android:[]
-
-        };
-
-
-
         testReversingListViewWithListBinding = function (complete) {
             //BugID:  629543
             var sampleDataSource = range(0, 20).map(function (i) { return { title: i, detail: "Javascript Toolkit_" + i }; });
@@ -1110,6 +1097,17 @@ module Tests {
                 done(complete);
         }
     }
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:[],
+        ie10:[],
+        chrome:["testListViewWithFilteredListMutation"],
+        safari:["testListViewWithFilteredListMutation"],
+        firefox:["testListViewWithFilteredListMutation"],
+        android:[]
+    };
+    Helper.disableTests(ListViewIntegrationTestingWithBindingList, disabledTestRegistry);
 
 }
 LiveUnit.registerTestClass("Tests.ListViewIntegrationTestingWithBindingList");

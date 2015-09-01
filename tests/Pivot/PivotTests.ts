@@ -407,15 +407,6 @@ module WinJSTests {
             document.body.removeChild(pivotWrapperEl);
         }
         
-        disabledTestRegistry = {
-            ie11:[
-                "testLocked",
-                "testFlip", 
-                "testEmptyPivotRecentersCorrectly", 
-                "testFractionalControlSizeDoesNotCauseInfiniteNavigation"
-                ],
-        }
-
         testLoad = function testLoad(complete) {
             var pivotItemCount = 5;
             instances = 0;
@@ -1574,6 +1565,16 @@ module WinJSTests {
             origTestFunc.call(this, complete, true);
         };
     });
+    
+    var disabledTestRegistry = {
+        ie11:[
+            "testLocked",
+            "testFlip", 
+            "testEmptyPivotRecentersCorrectly", 
+            "testFractionalControlSizeDoesNotCauseInfiniteNavigation"
+            ],
+        };
+    Helper.disableTests(PivotTests, disabledTestRegistry);
 }
 
 LiveUnit.registerTestClass("WinJSTests.PivotTests");

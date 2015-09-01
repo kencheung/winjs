@@ -716,29 +716,6 @@ module WinJSTests {
             WinJS.Utilities._setIsiOS(defaultIsiOS);
         };
         
-        disabledTestRegistry = {
-            all:[],
-            ie11:["testDeleteDoesNotLoseFocusRectangle"],
-            ie10:[
-                "testRealizeMoreThanCreated",
-                "testMaxDeferredItemCleanup",
-                "testScrollingDuringLazyCreation"
-                ],
-            chrome:[],
-            safari:[],
-            firefox:[
-                "testDeleteDoesNotLoseFocusRectangle",
-                "testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus",
-                "testMaxDeferredItemCleanup",
-                "testUninitialize"
-                ],
-            android:[
-                "testMaxDeferredItemCleanup",
-                "testInsertsAnimationStartsBeforeRealizationIsDone"
-                ]
-
-        };
-
         testInitalization = function (complete) {
             function createListView(orientation) {
 
@@ -5811,6 +5788,29 @@ module WinJSTests {
     // Generate stripe tests
     getPairWiseConfigurationsForSmallDataStripeTests().forEach(generateStripeTests);
     getPairWiseConfigurationsForBigDataStripeTests().forEach(generateStripeTests);
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:["testDeleteDoesNotLoseFocusRectangle"],
+        ie10:[
+            "testRealizeMoreThanCreated",
+            "testMaxDeferredItemCleanup",
+            "testScrollingDuringLazyCreation"
+            ],
+        chrome:[],
+        safari:[],
+        firefox:[
+            "testDeleteDoesNotLoseFocusRectangle",
+            "testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus",
+            "testMaxDeferredItemCleanup",
+            "testUninitialize"
+            ],
+        android:[
+            "testMaxDeferredItemCleanup",
+            "testInsertsAnimationStartsBeforeRealizationIsDone"
+            ]
+    };
+    Helper.disableTests(VirtualizedViewTests, disabledTestRegistry);
 
 }
 // register the object as a test class by passing in the name

@@ -356,18 +356,6 @@ module WinJSTests {
             document.body.removeChild(element);
         }
         
-        
-        disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:[],
-            chrome:[],
-            safari:[],
-            firefox:["testTabbingToHeaderFromChildElementDrawsFocusRect"],
-            android:[]
-
-        };
-
         // Test methods
         // Any child objects that start with "test" are automatically test methods
         testSimpleClick = function (complete) {
@@ -1703,6 +1691,17 @@ module WinJSTests {
     };
     generateOffscreenPageKeysTest("ListLayout");
     generateOffscreenPageKeysTest("GridLayout");
+    
+    var disabledTestRegistry = {
+        all:[],
+        ie11:[],
+        ie10:[],
+        chrome:[],
+        safari:[],
+        firefox:["testTabbingToHeaderFromChildElementDrawsFocusRect"],
+        android:[]
+    };
+    Helper.disableTests(BrowseModeTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.BrowseModeTests");
