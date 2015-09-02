@@ -1543,7 +1543,7 @@ module Helper {
     //     edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
     // };
     // disableTests(ListViewDSTestClass, disabledTestRegistry);
-    export function disableTests(testObj, registry) {
+    export function disableTests(testClass, registry) {
         
         if(!registry){
             throw "undefined registry in Helper.disableTests";
@@ -1597,6 +1597,9 @@ module Helper {
                 var disabledName = "x" + testKey;
                 proto[disabledName] = proto[testKey];
                 delete proto[testKey];
+                
+                // Create a property with the disabled test name that can not be overwritten
+                // in the constructor when an instance of the class is created later
                 Object.defineProperty(proto, testKey, {
                     enumerable: false,
                     get: function(){
