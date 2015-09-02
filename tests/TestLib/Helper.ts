@@ -1546,11 +1546,11 @@ module Helper {
     export function disableTests(testObj, registry) {
         
         if(!registry){
-            return;
+            throw "undefined registry in Helper.disableTests";
         }
         
-        if(!testObj){
-            return;
+        if(!testClass){
+            throw "undefined testClass in Helper.disableTests";
         }
         
         function getDisabledTestList(){
@@ -1584,17 +1584,28 @@ module Helper {
         }
         
         var disabledList = getDisabledTestList();
-        var proto = testObj.prototype; 
-
-        var testKeys = Object.keys(proto);
+        var proto = testClass.prototype;
+        
+        // Create instance of test class to access methods defined in constructor
+        var testInst = new testClass();
+        var testKeys = Object.keys(proto).concat(Object.keys(testInst));
         for(var i = 0; i < testKeys.length; i++){
-            var testObjKey = testKeys[i];
-            var index = disabledList.indexOf(testObjKey);
+            var testKey = testKeys[i];
+            var index = disabledList.indexOf(testKey);
             if(index > -1){
                 disabledList.splice(index,1);
-                var disabledName = "x" + testObjKey;
-               proto[disabledName] = proto[testObjKey];
-                delete proto[testObjKey];
+                var disabledName = "x" + testKey;
+                proto[disabledName] = proto[testKey];
+                delete proto[testKey];
+                Object.defineProperty(proto, testKey, {
+                    enumerable: false,
+                    get: function(){
+                        return undefined;
+                    },
+                    set: function (value){
+                        //no-op
+                    }
+                });
             }
         }
         
