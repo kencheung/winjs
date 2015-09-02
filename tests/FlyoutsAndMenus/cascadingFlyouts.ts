@@ -1327,6 +1327,21 @@ module CorsicaTests {
             document.body.appendChild(iframe);
         }
     }
+    
+    var disabledTestRegistryFlyout = {
+        firefox:[
+            "testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus",
+            "testEntireCascadeHidesWhenAllFlyoutsLoseFocus"
+            ]
+    }
+    var disableTestRegistryMenu = {
+        firefox:[
+            "testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus",
+            "testEntireCascadeHidesWhenAllFlyoutsLoseFocus"
+            ]
+    }
+    Helper.disableTests(CascadingFlyoutTests,disabledTestRegistryFlyout);
+    Helper.disableTests(CascadingMenuTests, disableTestRegistryMenu);
 }
 
 // register the object as a test class by passing in the name

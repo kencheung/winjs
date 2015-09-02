@@ -280,13 +280,11 @@ module WinJSTests {
     generate('headerfooterevents', "GridLayout", headerfooterevents, { skipInitEvents: true });
     
     var disabledTestRegistry = {
-        all:["testEvent_headerfooterevents_Level2"],
-        ie11:["testEvent_headerfooterevents_Level0"],
-        ie10:[],
-        chrome:[],
-        safari:[],
-        firefox:[],
-        android:["testEvent_headerfooterevents_Level0"]
+        all:[
+            "testEvent_headerfooterevents_Level2",
+            "testEvent_headerfooterevents_Level0"
+            ],
+       
     };
     Helper.disableTests(ListViewEventsTest, disabledTestRegistry);
 }

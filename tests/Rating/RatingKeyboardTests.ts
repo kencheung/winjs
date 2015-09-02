@@ -3179,8 +3179,27 @@ module WinJSTests {
     };
     
     var disabledTestRegistry = {
-        ie11:["testRating_Set_aria_valuenow_Random"],
-        ie10:["testRating_Keyboard_Right_Multiple_CustomMax", "testRating_Set_aria_valuenow_Random"]
+        ie11:[
+            "testRating_Set_aria_valuenow_Random",
+            "testRating_Keyboard_Up_Multiple_CustomMax"
+            ],
+        ie10:[
+            "testRating_Keyboard_Right_Multiple_CustomMax",
+            "testRating_Set_aria_valuenow_Random",
+            "testRating_Keyboard_Up_Multiple_CustomMax"
+            ],
+        safari:[
+            "testRating_Keyboard_Up_Multiple_CustomMax"
+        ],
+        firefox:[
+            "testRating_Keyboard_Up_Multiple_CustomMax"
+        ],
+        chrome:[
+            "testRating_Keyboard_Up_Multiple_CustomMax"
+        ],
+        android:[
+            "testRating_Keyboard_Up_Multiple_CustomMax"
+        ]
     };
     Helper.disableTests(RatingKeyboardTests, disabledTestRegistry);
 }

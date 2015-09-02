@@ -889,6 +889,7 @@ module WinJSTests {
         all:[],
         ie11:[
             "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_horizontal_",
+            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_vertical_",
             "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_horizontal_",
             "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_horizontal_",
             "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_vertical_",

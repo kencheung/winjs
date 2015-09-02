@@ -3836,7 +3836,11 @@ module CorsicaTests {
                 });
         });
     }
-
+    
+    var disabledTestRegistry = {
+        android:["testDontYieldBetweenSameWwaPriority"]
+    }
+    Helper.disableTests(Scheduler, disabledTestRegistry);
 }
 
 LiveUnit.registerTestClass("CorsicaTests.LinkedListMixin");
