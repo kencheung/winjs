@@ -971,11 +971,12 @@ module CorsicaTests {
         firefox:[
             "testFocusChangeBetweenCommandDeactivatesFlyoutCommands",
             "testParentMenuMovesFocusToSubMenuWhenActivatedMenuCommandIsFocused",
-            "testtestAdaptiveSpacing",
+            "testAdaptiveSpacing",
             "testAdaptiveSpacingConsistentInCascade",
             "testMenuInstantiation"
             ]
-    }
+    };
+    Helper.disableTests(MenuTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("CorsicaTests.MenuTests");

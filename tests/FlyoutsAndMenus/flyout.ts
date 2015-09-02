@@ -714,7 +714,7 @@ module CorsicaTests {
         ie10:[],
         chrome:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
         safari:[],
-        firefox:[],
+        firefox:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
         android:[]
     };
     Helper.disableTests(FlyoutTests, disabledTestRegistry);

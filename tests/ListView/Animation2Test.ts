@@ -908,7 +908,10 @@ module WinJSTests {
             "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_vertical_",
             "testOverlappingRemovalsAnimations"
             ],
-        firefox:["testOverlappingRemovalsAnimations"],
+        firefox:[
+            "testOverlappingRemovalsAnimations",
+            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_horizontal_"
+            ],
         android:[]   
     };
     Helper.disableTests(ListViewAnimation2Test, disabledTestRegistry);
