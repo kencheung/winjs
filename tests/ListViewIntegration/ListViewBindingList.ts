@@ -1102,10 +1102,13 @@ module Tests {
         all:[],
         ie11:[],
         ie10:[],
-        chrome:["testListViewWithFilteredListMutation"],
+        chrome:[
+            "testListViewWithFilteredListMutation",
+            "testListViewWithSortedProjectionSpecialCases"
+            ],
         safari:["testListViewWithFilteredListMutation"],
         firefox:["testListViewWithFilteredListMutation"],
-        android:[]
+        android:["testListViewWithSortedProjectionSpecialCases"]
     };
     Helper.disableTests(ListViewIntegrationTestingWithBindingList, disabledTestRegistry);
 

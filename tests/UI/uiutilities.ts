@@ -818,6 +818,37 @@ module CorsicaTests {
         Utilities.prototype["testNoScroll" + name + "_ltr"] = generateTestNoScroll(false, setActiveTests[name]);
         Utilities.prototype["testNoScroll" + name + "_rtl"] = generateTestNoScroll(true, setActiveTests[name]);
     });
+    
+    var disabledTestsRegistry = {
+        ie11:[
+            "testNoScroll_ltr_setActive",
+            "testNoScroll_lt_trySetActive",
+            "testNoScroll_ltr_setActiveFirstFocusableElement0",
+            "testNoScroll_ltr_setActiveFirstFocusableElementPos",
+            "testNoScroll_ltr_setActiveLastFocusableElement0",
+            "testNoScroll_ltr_setActiveLastFocusableElementPos",
+            "testNoScroll_rtl_setActive",
+            "testNoScroll_rtl_trySetActive",
+            "testNoScroll_rtl_setActiveFirstFocusableElement0",
+            "testNoScroll_rtl_setActiveFirstFocusableElementPos",
+            "testNoScroll_rtl_setActiveLastFocusableElement0",
+            "testNoScroll_rtl_setActiveLastFocusableElementPos"
+        ],
+        firefox:[
+            "testNoScroll_ltr_setActive",
+            "testNoScroll_lt_trySetActive",
+            "testNoScroll_ltr_setActiveFirstFocusableElement0",
+            "testNoScroll_ltr_setActiveFirstFocusableElementPos",
+            "testNoScroll_ltr_setActiveLastFocusableElement0",
+            "testNoScroll_ltr_setActiveLastFocusableElementPos",
+            "testNoScroll_rtl_setActive",
+            "testNoScroll_rtl_trySetActive",
+            "testNoScroll_rtl_setActiveFirstFocusableElement0",
+            "testNoScroll_rtl_setActiveFirstFocusableElementPos",
+            "testNoScroll_rtl_setActiveLastFocusableElement0",
+            "testNoScroll_rtl_setActiveLastFocusableElementPos"
+        ]
+    }
 
 }
 LiveUnit.registerTestClass("CorsicaTests.Utilities");

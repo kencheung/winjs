@@ -5798,7 +5798,10 @@ module WinJSTests {
             "testScrollingDuringLazyCreation"
             ],
         chrome:[],
-        safari:[],
+        safari:[
+            "testMaxDeferredItemCleanup",
+            "InsertsAnimationStartsBeforeRealizationIsDone"
+            ],
         firefox:[
             "testDeleteDoesNotLoseFocusRectangle",
             "testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus",
