@@ -1506,10 +1506,6 @@ module WinJSTests {
     };
     generateLoadingStateScrolling("GridLayout");
     
-    var disabledTestRegistry = {
-        ie10:["testBigGroupCellSpanningLayout"]
-    };
-    Helper.disableTests(GroupsTests, disabledTestRegistry);
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.GroupsTests");
