@@ -1567,7 +1567,13 @@ module CorsicaTests {
             "testSingleAppBarLightDismissFocusWrapping"
             ],
         safari:[],
-        firefox:[],
+        firefox:[
+            "testRemainsVisibleWhenMovingFocusInternally",
+            "testDismissesWhenLosingFocus",
+            "testMoveFocusFromMenuToAppBar",
+            "testFocusLeavesMenuAndAppBar",
+            "testSingleAppBarLightDismissFocusWrapping"
+            ],
         android:[]
     };
     Helper.disableTests(LegacyAppBarTests, disabledTestRegistry);

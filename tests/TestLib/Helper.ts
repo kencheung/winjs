@@ -1575,8 +1575,8 @@ module Helper {
             
             if(registry.all){
                 for(var i = 0; i < registry.all.length; i++){
-                    if(disabledList.indexOf(registry.all[i]) > -1){
-                        disabledList.concat(registry.all[i]);
+                    if(disabledList.indexOf(registry.all[i]) < 0){
+                        disabledList = disabledList.concat(registry.all[i]);
                     }
                 }
             }
