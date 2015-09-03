@@ -3192,13 +3192,16 @@ module WinJSTests {
             "testRating_Keyboard_Up_Multiple_CustomMax"
         ],
         firefox:[
-            "testRating_Keyboard_Up_Multiple_CustomMax"
+            "testRating_Keyboard_Up_Multiple_CustomMax",
+            "testRating_Keyboard_Right_Multiple_CustomMax"
         ],
         chrome:[
-            "testRating_Keyboard_Up_Multiple_CustomMax"
+            "testRating_Keyboard_Up_Multiple_CustomMax",
+            "testRating_Keyboard_Right_Multiple_CustomMax"
         ],
         android:[
-            "testRating_Keyboard_Up_Multiple_CustomMax"
+            "testRating_Keyboard_Up_Multiple_CustomMax",
+            "testRating_Keyboard_Right_Multiple_CustomMax"
         ]
     };
     Helper.disableTests(RatingKeyboardTests, disabledTestRegistry);

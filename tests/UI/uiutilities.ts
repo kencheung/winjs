@@ -822,7 +822,7 @@ module CorsicaTests {
     var disabledTestsRegistry = {
         ie11:[
             "testNoScroll_setActive_ltr",
-            "testNoScroll_trySetActive_ltr_",
+            "testNoScroll_trySetActive_ltr",
             "testNoScroll_setActiveFirstFocusableElement0_ltr",
             "testNoScroll_setActiveFirstFocusableElementPos_ltr",
             "testNoScroll_setActiveLastFocusableElement0_ltr",

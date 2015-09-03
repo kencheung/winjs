@@ -1659,7 +1659,8 @@ module WinJSTests {
     var disabledTestRegistry = {
         all:[],
         ie11:[
-            "testUncontiguousSelectionReorderGridLayoutVDS_rtl"
+            "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
+            "testUncontiguousSelectionReorderListLayoutVDS_rtl"
             ],
         ie10:[],
         chrome:[
