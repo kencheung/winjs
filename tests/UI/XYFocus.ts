@@ -734,14 +734,15 @@ module WinJSTests {
     }
     
     var disabledTestRegistry = {
-        safari:["testIFrameRemovalUnregistersWithXYFocus"],
-        chrome:["testIFrameRemovalUnregistersWithXYFocus",
-            "testXYFocusHistory"
-            ],
-        android:[
-            "testIFrameRemovalUnregistersWithXYFocus",
-            "testXYFocusHistory"
-            ]
+        testIFrameRemovalUnregistersWithXYFocus: [
+            Helper.Browsers.safari,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ],
+        testXYFocusHistory: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ]
     };
     Helper.disableTests(XYFocusTests, disabledTestRegistry);
 }

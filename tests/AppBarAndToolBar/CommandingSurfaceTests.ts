@@ -2321,15 +2321,10 @@ module CorsicaTests {
             }).done(complete);
         }
     }
-    
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:[],
-        chrome:["testShowOnlyCommands"],
-        safari:["testShowOnlyCommands"],
-        firefox:["testOverflowDirectionProperty", "testKeyboardingWithCustomContent", "testShowOnlyCommands"],
-        android:[]
+        testShowOnlyCommands:[Helper.Browsers.chrome, Helper.Browsers.safari, Helper.Browsers.firefox],
+        testOverflowDirectionProperty:[Helper.Browsers.firefox],
+        testKeyboardingWithCustomContent:[Helper.Browsers.firefox]
     };
     Helper.disableTests(_CommandingSurfaceTests, disabledTestRegistry);
 }

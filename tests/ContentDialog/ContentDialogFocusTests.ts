@@ -97,11 +97,9 @@ module ContentDialogTests {
     }
     
     var disabledTestRegistry = {
-        firefox:[
-            "testInitialFocusWithoutFocusableContent",
-            "testInitialFocusWithFocusableContent",
-            "testFocusIsRestoredAfterHiding"
-                ],
+        testInitialFocusWithoutFocusableContent: Helper.Browsers.firefox,
+        testInitialFocusWithFocusableContent: Helper.Browsers.firefox,
+        testFocusIsRestoredAfterHiding: Helper.Browsers.firefox
     };
     Helper.disableTests(FocusTests, disabledTestRegistry);
 }

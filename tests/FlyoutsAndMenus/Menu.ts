@@ -968,13 +968,11 @@ module CorsicaTests {
     }
     
     var disabledTestRegistry = {
-        firefox:[
-            "testFocusChangeBetweenCommandDeactivatesFlyoutCommands",
-            "testParentMenuMovesFocusToSubMenuWhenActivatedMenuCommandIsFocused",
-            "testAdaptiveSpacing",
-            "testAdaptiveSpacingConsistentInCascade",
-            "testMenuInstantiation"
-            ]
+         testFocusChangeBetweenCommandDeactivatesFlyoutCommands: Helper.Browsers.firefox,
+         testParentMenuMovesFocusToSubMenuWhenActivatedMenuCommandIsFocused: Helper.Browsers.firefox,
+         testAdaptiveSpacing: Helper.Browsers.firefox,
+         testAdaptiveSpacingConsistentInCascade: Helper.Browsers.firefox,
+         testMenuInstantiation: Helper.Browsers.firefox,
     };
     Helper.disableTests(MenuTests, disabledTestRegistry);
 }

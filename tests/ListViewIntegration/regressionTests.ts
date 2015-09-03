@@ -706,33 +706,16 @@ module WinJSTests {
     }
     
      var disabledTestRegistry = {
-        all:[],
-        ie11:[
-            "testWin8_725480"
-            ],
-        ie10:[
-            "testWin8_725480",
-            "testWinBlue_148641"
-            ],
-        safari:[
-            "testWin8_725480",
-            "testWinBlue_148641"
-            ],
-        firefox:[
-            "testWin8_725480",
-            "testWinBlue_148641"
-            ],
-        chrome:[
-            "testWin8_725480",
-            "testWinBlue_148641"
-            ],
-        android:[
-            "testWin8_725480",
-            "testWinBlue_148641"
-            ]
+        testWin8_725480: Helper.BrowserCombos.all,
+        testWinBlue_148641: [
+            Helper.Browsers.ie10,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ]
     }
     Helper.disableTests(ListViewRegression, disabledTestRegistry);
-
 }
 
 LiveUnit.registerTestClass("WinJSTests.ListViewRegression");

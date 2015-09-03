@@ -280,11 +280,8 @@ module WinJSTests {
     generate('headerfooterevents', "GridLayout", headerfooterevents, { skipInitEvents: true });
     
     var disabledTestRegistry = {
-        all:[
-            "testEvent_headerfooterevents_Level2",
-            "testEvent_headerfooterevents_Level0"
-            ],
-       
+        testEvent_headerfooterevents_Level2: Helper.BrowserCombos.all,
+        testEvent_headerfooterevents_Level0: Helper.BrowserCombos.all
     };
     Helper.disableTests(ListViewEventsTest, disabledTestRegistry);
 }

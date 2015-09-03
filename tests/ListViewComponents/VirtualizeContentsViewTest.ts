@@ -5784,26 +5784,24 @@ module WinJSTests {
     getPairWiseConfigurationsForBigDataStripeTests().forEach(generateStripeTests);
     
     var disabledTestRegistry = {
-        ie11:["testDeleteDoesNotLoseFocusRectangle"],
-        ie10:[
-            "testRealizeMoreThanCreated",
-            "testMaxDeferredItemCleanup",
-            "testScrollingDuringLazyCreation"
-            ],
-        safari:[
-            "testMaxDeferredItemCleanup",
-            "testInsertsAnimationStartsBeforeRealizationIsDone"
-            ],
-        firefox:[
-            "testDeleteDoesNotLoseFocusRectangle",
-            "testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus",
-            "testMaxDeferredItemCleanup",
-            "testUninitialize"
-            ],
-        android:[
-            "testMaxDeferredItemCleanup",
-            "testInsertsAnimationStartsBeforeRealizationIsDone"
-            ]
+        testDeleteDoesNotLoseFocusRectangle: [
+            Helper.Browsers.ie11,
+            Helper.Browsers.firefox
+        ],
+        testRealizeMoreThanCreated: Helper.Browsers.ie10,
+        testMaxDeferredItemCleanup: [
+            Helper.Browsers.ie10,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testScrollingDuringLazyCreation: Helper.Browsers.ie10,
+        testInsertsAnimationStartsBeforeRealizationIsDone: [
+            Helper.Browsers.safari,
+            Helper.Browsers.android
+        ],
+        testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus: Helper.Browsers.firefox,
+        testUninitialize: Helper.Browsers.firefox
     };
     Helper.disableTests(VirtualizedViewTests, disabledTestRegistry);
 }

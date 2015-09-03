@@ -3179,31 +3179,15 @@ module WinJSTests {
     };
     
     var disabledTestRegistry = {
-        ie11:[
-            "testRating_Set_aria_valuenow_Random",
-            "testRating_Keyboard_Up_Multiple_CustomMax"
-            ],
-        ie10:[
-            "testRating_Keyboard_Right_Multiple_CustomMax",
-            "testRating_Set_aria_valuenow_Random",
-            "testRating_Keyboard_Up_Multiple_CustomMax"
-            ],
-        safari:[
-            "testRating_Keyboard_Up_Multiple_CustomMax"
-        ],
-        firefox:[
-            "testRating_Keyboard_Up_Multiple_CustomMax",
-            "testRating_Keyboard_Right_Multiple_CustomMax"
-        ],
-        chrome:[
-            "testRating_Keyboard_Up_Multiple_CustomMax",
-            "testRating_Keyboard_Right_Multiple_CustomMax"
-        ],
-        android:[
-            "testRating_Keyboard_Up_Multiple_CustomMax",
-            "testRating_Keyboard_Right_Multiple_CustomMax"
+        testRating_Set_aria_valuenow_Random: Helper.BrowserCombos.onlyIE,
+        testRating_Keyboard_Up_Multiple_CustomMax: Helper.BrowserCombos.all,
+        testRating_Keyboard_Right_Multiple_CustomMax: [
+            Helper.Browsers.ie10,
+            Helper.Browsers.firefox,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
         ]
-    };
+    }
     Helper.disableTests(RatingKeyboardTests, disabledTestRegistry);
 }
 // Register the object as a test class by passing in the name

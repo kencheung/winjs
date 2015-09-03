@@ -1285,35 +1285,33 @@ module WinJSTests {
         };
     };
     generateRecalculateItemPosition("GridLayout");
-
+    
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:["testFirstLastDisplayedInGridLayout_GridLayout"],
-        chrome:[
-            "testRestoringScrollpos",
-            "testHeightAutoLayoutListLayout",
-            "testHeightAutoLayoutGridLayout",
-            "testFirstLastDisplayedInGridLayout_GridLayout"
-            ],
-        safari:[
-            "testRestoringScrollpos",
-            "testHeightAutoLayoutListLayout",
-            "testHeightAutoLayoutGridLayout",
-            "testFirstLastDisplayedInGridLayout_GridLayout"
-            ],
-        firefox:[
-            "testRestoringScrollpos",
-            "testHeightAutoLayoutListLayout",
-            "testHeightAutoLayoutGridLayout",
-            "testFirstLastDisplayedInGridLayout_GridLayout"
-            ],
-        android:[
-            "testRestoringScrollpos",
-            "testHeightAutoLayoutListLayout",
-            "testHeightAutoLayoutGridLayout",
-            "testFirstLastDisplayedInGridLayout_GridLayout"
-            ]
+        testFirstLastDisplayedInGridLayout_GridLayout: [
+            Helper.Browsers.ie10,
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testRestoringScrollpos: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testHeightAutoLayoutListLayout: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testHeightAutoLayoutGridLayout: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ]
     };
     
     Helper.disableTests(LayoutTestsExtra, disabledTestRegistry);

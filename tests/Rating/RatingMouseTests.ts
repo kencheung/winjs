@@ -1265,7 +1265,7 @@ module WinJSTests {
     };
     
     var disabledTestRegistry = {
-        android:["testRating_Click_Random_CustomMax"]
+        testRating_Click_Random_CustomMax: Helper.Browsers.android
     };
     Helper.disableTests(RatingMouseTests, disabledTestRegistry);
 }

@@ -886,31 +886,31 @@ module WinJSTests {
     })();
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:[
-            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_horizontal_",
-            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_vertical_",
-            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_horizontal_",
-            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_horizontal_",
-            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_vertical_",
-            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_vertical_",
-            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_horizontal_",
-            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_vertical_"
-            ],
-        ie10:[],
-        chrome:[],
-        safari:[
-            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_vertical_",
-            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_vertical_",
-            "testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_vertical_",
-            "testOverlappingRemovalsAnimations"
-            ],
-        firefox:[
-            "testOverlappingRemovalsAnimations",
-            "testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_horizontal_"
-            ],
-        android:[]   
-    };
+        testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_horizontal_: [
+            Helper.Browsers.ie11,
+            Helper.Browsers.firefox
+        ],
+        testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_vertical_: [
+            Helper.Browsers.ie11,
+            Helper.Browsers.safari
+        ],
+        testOverlappingRemovalsAnimations: [
+            Helper.Browsers.firefox,
+            Helper.Browsers.safari
+        ],
+        testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_vertical_: [
+            Helper.Browsers.safari,
+            Helper.Browsers.ie11
+        ],
+        testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_vertical_:[
+           Helper.Browsers.safari,
+           Helper.Browsers.ie11
+        ],
+        testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionTop_horizontal_: Helper.Browsers.ie11,
+        testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_horizontal_: Helper.Browsers.ie11,
+        testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_horizontal_: Helper.Browsers.ie11,
+        testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_vertical_: Helper.Browsers.ie11 
+    }
     Helper.disableTests(ListViewAnimation2Test, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.ListViewAnimation2Test");

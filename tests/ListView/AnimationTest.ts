@@ -400,21 +400,22 @@ module WinJSTests {
         };
     };
     generateAnimationEventsWithAnimationsDisabled("GridLayout");
-    var disabledTestRegistry = {
-        safari:[
-            "testDelayedEntranceAnimationGridLayout",
-            "testSkippedContentTransitionGridLayout",
-            "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"],
-        chrome:[
-            "testDelayedEntranceAnimationGridLayout",
-            "testSkippedContentTransitionGridLayout",
-            "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"
-            ],
-        android:[
-            "testDelayedEntranceAnimationGridLayout",
-            "testSkippedContentTransitionGridLayout",
-            "testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout"
-            ]
+     var disabledTestRegistry = {
+        testDelayedEntranceAnimationGridLayout: [
+            Helper.Browsers.safari,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ],
+        testSkippedContentTransitionGridLayout: [
+            Helper.Browsers.safari,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ],
+        testInterruptedEntranceAnimationWithContentTransitionPlayedGridLayout: [
+            Helper.Browsers.safari,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ]
     }
     Helper.disableTests(ListViewAnimationTest, disabledTestRegistry);
 }

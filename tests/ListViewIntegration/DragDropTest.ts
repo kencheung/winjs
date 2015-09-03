@@ -1657,36 +1657,32 @@ module WinJSTests {
     }, null, true);
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:[
-            "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
-            "testUncontiguousSelectionReorderListLayoutVDS_rtl"
-            ],
-        ie10:[],
-        chrome:[
-            "testUncontiguousSelectionReorderListLayoutVDS_rtl",
-            "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
-            "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
-            ],
-        safari:[
-            "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderListLayoutVDS_rtl",
-            "testUncontiguousSelectionReorderGridLayoutVDS_rtl"
-            ],
-        firefox:[
-            "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderListLayoutVDS_rtl",
-            "testUncontiguousSelectionReorderGridLayoutVDS_rtl"
-            ],
-        android:[
-            "testUncontiguousSelectionReorderListLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderGridLayoutBindingList_ltr",
-            "testUncontiguousSelectionReorderListLayoutVDS_rtl",
-            "testUncontiguousSelectionReorderGridLayoutVDS_rtl",
-            ]
+        testUncontiguousSelectionReorderGridLayoutVDS_rtl: [
+            Helper.Browsers.ie11,
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testUncontiguousSelectionReorderListLayoutVDS_rtl: [
+            Helper.Browsers.ie11,
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testUncontiguousSelectionReorderListLayoutBindingList_ltr: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testUncontiguousSelectionReorderGridLayoutBindingList_ltr: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ]
     };
     Helper.disableTests(ListViewDragDropTest, disabledTestRegistry);
 

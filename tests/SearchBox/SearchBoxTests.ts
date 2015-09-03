@@ -183,10 +183,8 @@ module SearchBoxTests {
     };
     
     var disabledTestRegistry = {
-    firefox: [
-        "testFocusOnKeyboardInputBringsUpSuggestions",
-        "testLegacyClassNames"
-        ]
+        testFocusOnKeyboardInputBringsUpSuggestions: Helper.Browsers.firefox,
+        testLegacyClassNames: Helper.Browsers.firefox
     };
     Helper.disableTests(SearchBoxTests, disabledTestRegistry);
 }

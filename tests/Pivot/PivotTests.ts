@@ -1568,13 +1568,11 @@ module WinJSTests {
     });
     
     var disabledTestRegistry = {
-        ie11:[
-            "testLocked",
-            "testFlip", 
-            "testEmptyPivotRecentersCorrectly", 
-            "testFractionalControlSizeDoesNotCauseInfiniteNavigation"
-            ],
-        };
+        testLocked: Helper.Browsers.ie11,
+        testFlip: Helper.Browsers.ie11, 
+        testEmptyPivotRecentersCorrectly: Helper.Browsers.ie11, 
+        testFractionalControlSizeDoesNotCauseInfiniteNavigation: Helper.Browsers.ie11
+    };
     Helper.disableTests(PivotTests, disabledTestRegistry);
 }
 

@@ -1693,13 +1693,7 @@ module WinJSTests {
     generateOffscreenPageKeysTest("GridLayout");
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:[],
-        chrome:[],
-        safari:[],
-        firefox:["testTabbingToHeaderFromChildElementDrawsFocusRect"],
-        android:[]
+        testTabbingToHeaderFromChildElementDrawsFocusRect: Helper.Browsers.firefox
     };
     Helper.disableTests(BrowseModeTests, disabledTestRegistry);
 }
