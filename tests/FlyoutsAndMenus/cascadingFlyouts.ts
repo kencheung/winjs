@@ -1329,21 +1329,15 @@ module CorsicaTests {
     }
     
     var disabledTestRegistryFlyout = {
-        firefox:[
-            "testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus",
-            "testEntireCascadeHidesWhenAllFlyoutsLoseFocus"
-            ]
+        testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus: Helper.Browsers.firefox,
+        testEntireCascadeHidesWhenAllFlyoutsLoseFocus: Helper.Browsers.firefox
     }
     var disabledTestRegistryMenu = {
-        firefox:[
-            "testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus",
-            "testEntireCascadeHidesWhenAllFlyoutsLoseFocus",
-            "testShowingAFlyout_NotAnchoredToAFlyoutInTheTheCascade_ReplacesTheCurrentCascadeWithItself"
-            ],
-        safari:[
-            "testVerticalAlignmentOfCascadedSubMenus",
-            "testHorizontalLayoutOfCascadedSubMenus"
-        ]
+        testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus: Helper.Browsers.firefox,
+        testEntireCascadeHidesWhenAllFlyoutsLoseFocus: Helper.Browsers.firefox,
+        testShowingAFlyout_NotAnchoredToAFlyoutInTheTheCascade_ReplacesTheCurrentCascadeWithItself: Helper.Browsers.firefox,
+        testVerticalAlignmentOfCascadedSubMenus: Helper.Browsers.safari,
+        testHorizontalLayoutOfCascadedSubMenus: Helper.Browsers.safari
     }
     Helper.disableTests(CascadingFlyoutTests,disabledTestRegistryFlyout);
     Helper.disableTests(CascadingMenuTests, disabledTestRegistryMenu);

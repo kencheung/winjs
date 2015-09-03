@@ -1879,13 +1879,7 @@ module WinJSTests {
     })();
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:[],
-        chrome:[],
-        safari:[],
-        firefox:["testViewportFocus"],
-        android:[]
+        testViewportFocus: Helper.Browsers.firefox
     };
     Helper.disableTests(ListViewTests, disabledTestRegistry);
 }

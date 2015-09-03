@@ -347,13 +347,10 @@ module WinJSTests {
     })();
 
     var disabledTestRegistry = {
-        all:[],
-        ie11:["testSemanticZoomMappingStartGridLayout"],
-        ie10:[],
-        chrome:[],
-        safari:[],
-        firefox:["testSemanticZoomMappingStartGridLayout"],
-        android:[]
+        testSemanticZoomMappingStartGridLayout: [
+            Helper.Browsers.ie11,
+            Helper.Browsers.firefox
+        ]
     };
     Helper.disableTests(PhotosAppScenarios,disabledTestRegistry);
 }

@@ -1589,8 +1589,14 @@ module Helper {
             var testNames = Object.keys(registry);
             for (var i = 0; i < testNames.length; i++) {
                 var testName = testNames[i];
-                if (registry[testName].indexOf(browser) > -1){
-                    disabledList.push(testName);
+                if (registry[testName].length){
+                    if (registry[testName].indexOf(browser) > -1){
+                        disabledList.push(testName);
+                    }
+                }else{
+                    if (registry[testName] === browser){
+                        disabledList.push(testName);
+                    }
                 }
             }
             return disabledList;

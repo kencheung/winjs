@@ -1556,25 +1556,11 @@ module CorsicaTests {
     };
     
      var disabledTestRegistry = {
-        all:[],
-        ie11:["testDismissesWhenLosingFocus", "testMoveFocusFromMenuToAppBar"],
-        ie10:[],
-        chrome:[
-            "testDismissesWhenLosingFocus",
-            "testRemainsVisibleWhenMovingFocusInternally",
-            "testMoveFocusFromMenuToAppBar",
-            "testFocusLeavesMenuAndAppBar",
-            "testSingleAppBarLightDismissFocusWrapping"
-            ],
-        safari:[],
-        firefox:[
-            "testRemainsVisibleWhenMovingFocusInternally",
-            "testDismissesWhenLosingFocus",
-            "testMoveFocusFromMenuToAppBar",
-            "testFocusLeavesMenuAndAppBar",
-            "testSingleAppBarLightDismissFocusWrapping"
-            ],
-        android:[]
+         testDismissesWhenLosingFocus: [Helper.Browsers.ie11, Helper.Browsers.chrome, Helper.Browsers.firefox],
+         testMoveFocusFromMenuToAppBar: [Helper.Browsers.ie11, Helper.Browsers.chrome, Helper.Browsers.firefox],
+         testRemainsVisibleWhenMovingFocusInternally: [Helper.Browsers.chrome, Helper.Browsers.firefox],
+         testFocusLeavesMenuAndAppBar: [Helper.Browsers.chrome, Helper.Browsers.firefox],
+         testSingleAppBarLightDismissFocusWrapping: [Helper.Browsers.chrome, Helper.Browsers.firefox]
     };
     Helper.disableTests(LegacyAppBarTests, disabledTestRegistry);
 }

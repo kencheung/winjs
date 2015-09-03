@@ -991,21 +991,19 @@ module WinJSTests {
     };
     
     var disabledTestRegistry = {
-        firefox: [
-            "testCurrentIndexConstructor",
-            "testCurrentIndexAndMaxRowsConstructor",
-            "testCurrentIndexAndMaxRows",
-            "testArrowKeysPressed",
-            "testKeyboardingHorizontal",
-            "testKeyboardingVertical",
-            "testFocusUpdateOnDataRemove",
-            "testFocusUpdateOnDataChange",
-            "testFocusUpdateOnDataInserts",
-            "testFocusUpdateOnDataReload",
-            "testFocusUpdateOnDataMove",
-            "testSplitToggle",
-            "testChangeLayoutProperty"
-            ]
+        testCurrentIndexConstructor: Helper.Browsers.firefox,
+        testCurrentIndexAndMaxRowsConstructor: Helper.Browsers.firefox,
+        testCurrentIndexAndMaxRows: Helper.Browsers.firefox,
+        testArrowKeysPressed: Helper.Browsers.firefox,
+        testKeyboardingHorizontal: Helper.Browsers.firefox,
+        testKeyboardingVertical: Helper.Browsers.firefox,
+        testFocusUpdateOnDataRemove: Helper.Browsers.firefox,
+        testFocusUpdateOnDataChange: Helper.Browsers.firefox,
+        testFocusUpdateOnDataInserts: Helper.Browsers.firefox,
+        testFocusUpdateOnDataReload: Helper.Browsers.firefox,
+        testFocusUpdateOnDataMove: Helper.Browsers.firefox,
+        testSplitToggle: Helper.Browsers.firefox,
+        testChangeLayoutProperty: Helper.Browsers.firefox   
     };
     Helper.disableTests(NavBarContainerTests, disabledTestRegistry);
 }

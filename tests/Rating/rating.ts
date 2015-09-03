@@ -177,7 +177,7 @@ module CorsicaTests {
         }
     }
     var disabledTestRegistry = {
-        ie10:["testRatingPropertiesUpdate"]
+        testRatingPropertiesUpdate: Helper.Browsers.ie10
     };
     Helper.disableTests(RatingTests, disabledTestRegistry);
 }

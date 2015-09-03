@@ -232,13 +232,7 @@ module WinJSTests {
     }
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:["testThumbDragToOtherSide"],
-        ie10:[],
-        chrome:[],
-        safari:[],
-        firefox:[],
-        android:[]
+        testThumbDragToOtherSide: Helper.Browsers.ie11
     };
     Helper.disableTests(ToggleSwitchTests, disabledTestRegistry);
 

@@ -709,13 +709,15 @@ module CorsicaTests {
     }
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:["testDismissesWhenLosingFocus"],
-        ie10:[],
-        chrome:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
-        safari:[],
-        firefox:["testDismissesWhenLosingFocus", "testRemainsVisibleWhenMovingFocusInternally"],
-        android:[]
+        testDismissesWhenLosingFocus:[
+            Helper.Browsers.ie11,
+            Helper.Browsers.chrome,
+            Helper.Browsers.firefox
+        ],
+        testRemainsVisibleWhenMovingFocusInternally:[
+            Helper.Browsers.chrome,
+            Helper.Browsers.firefox
+        ]
     };
     Helper.disableTests(FlyoutTests, disabledTestRegistry);
 }

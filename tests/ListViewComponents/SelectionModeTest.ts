@@ -941,14 +941,9 @@ module WinJSTests {
     };
     generateDataChangeInSelChangedHandler("GridLayout");
     
+    
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:["testPickerMultiMode"],
-        chrome:[],
-        safari:[],
-        firefox:[],
-        android:[]
+        testPickerMultiMode: Helper.Browsers.ie10
     };
     Helper.disableTests(SelectionModeTests, disabledTestRegistry);
 

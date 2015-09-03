@@ -936,13 +936,8 @@ module WinJSTests {
     };
     
     var disabledTestRegistry = {
-        chrome:[
-            "testRandomUsageWithoutIndependentChanges",
-            ],
-        safari:[
-            "testRandomUsageWithoutIndependentChanges",
-            ]
-    }
+        testRandomUsageWithoutIndependentChanges: [Helper.Browsers.chrome, Helper.Browsers.safari]
+    };
     Helper.disableTests(NotificationTests, disabledTestRegistry);
 }
 // Register the object as a test class by passing in the name

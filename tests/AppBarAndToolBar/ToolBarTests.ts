@@ -2096,13 +2096,10 @@ module CorsicaTests {
 
     }
     var disabledTestRegistry = {
-        all:[],
-        ie11:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap"],
-        ie10:[],
-        chrome:["testShowOnlyCommands"],
-        safari:["testShowOnlyCommands"],
-        firefox:["testLightDismissWithClose", "testLightDismissWithDispose", "testLightDismissWithTap", "testShowOnlyCommands"],
-        android:[]
+      testLightDismissWithClose:[Helper.Browsers.ie11, Helper.Browsers.firefox],
+      testLightDismissWithDispose:[Helper.Browsers.ie11, Helper.Browsers.firefox],
+      testLightDismissWithTap:[Helper.Browsers.ie11, Helper.Browsers.firefox],
+      testShowOnlyCommands:[Helper.Browsers.chrome, Helper.Browsers.safari, Helper.Browsers.firefox]
     };
     Helper.disableTests(ToolBarTests, disabledTestRegistry);
 }

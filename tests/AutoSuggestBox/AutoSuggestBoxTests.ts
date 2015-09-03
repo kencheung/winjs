@@ -916,18 +916,15 @@ module AutoSuggestBoxTests {
     };
     
     var disabledTestRegistry = {
-        firefox:["testSuggestionsDisplayed",
-            "testQueryChangeAfterFocusLoss",
-            "testQuerySuggestionSelected",
-            "testResultSuggestionSelected",
-            "testSuggestionSelectionWithNarrator",
-            "testChooseSuggestionOnEnterEnabled",
-            "testArrowKeysOnSuggestionFlyout",
-            "testArrowKeysOnSuggestionFlyoutAbove",
-            ],
-        ie11:["testQueryChangeAfterFocusLoss"]
+        testSuggestionsDisplayed: Helper.Browsers.firefox,
+        testQueryChangeAfterFocusLoss:[Helper.Browsers.ie11, Helper.Browsers.firefox],
+        testQuerySuggestionSelected: Helper.Browsers.firefox,
+        testResultSuggestionSelected: Helper.Browsers.firefox,
+        testSuggestionSelectionWithNarrator: Helper.Browsers.firefox,
+        testChooseSuggestionOnEnterEnabled: Helper.Browsers.firefox,
+        testArrowKeysOnSuggestionFlyout: Helper.Browsers.firefox,
+        testArrowKeysOnSuggestionFlyoutAbove: Helper.Browsers.firefox,
     }
     Helper.disableTests(AutoSuggestBoxTests, disabledTestRegistry);
-
 }
 LiveUnit.registerTestClass("AutoSuggestBoxTests.AutoSuggestBoxTests");

@@ -1233,7 +1233,7 @@ module WinJSTests {
     }
     
     var disabledTestRegistry = {
-        firefox:["testDeleteWrapperSizeDuringAnimationGridLayout"]
+        testDeleteWrapperSizeDuringAnimationGridLayout: Helper.Browsers.firefox
     };
     Helper.disableTests(ListEditorTest, disabledTestRegistry);
 }

@@ -1097,19 +1097,17 @@ module Tests {
                 done(complete);
         }
     }
-    
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:[],
-        chrome:[
-            "testListViewWithFilteredListMutation",
-            "testListViewWithSortedProjectionSpecialCases"
-            ],
-        safari:["testListViewWithFilteredListMutation"],
-        firefox:["testListViewWithFilteredListMutation"],
-        android:["testListViewWithSortedProjectionSpecialCases"]
-    };
+        testListViewWithFilteredListMutation: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox
+        ],
+        testListViewWithSortedProjectionSpecialCases: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ]
+    }
     Helper.disableTests(ListViewIntegrationTestingWithBindingList, disabledTestRegistry);
 
 }

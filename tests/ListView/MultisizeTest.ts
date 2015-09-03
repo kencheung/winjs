@@ -1117,7 +1117,7 @@ module WinJSTests {
     generateBigGroup("CellSpanningLayout");
 
     var disabledTestRegistry = {
-        ie10:["testBigGroupCellSpanningLayout"]
+        testBigGroupCellSpanningLayout: Helper.Browsers.ie10
     };
     Helper.disableTests(MultisizeTests, disabledTestRegistry);
 }

@@ -3839,7 +3839,7 @@ module CorsicaTests {
     }
     
     var disabledTestRegistry = {
-        android:["testDontYieldBetweenSameWwaPriority"]
+        testDontYieldBetweenSameWwaPriority: Helper.Browsers.android
     }
     Helper.disableTests(Scheduler, disabledTestRegistry);
 }

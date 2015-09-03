@@ -313,13 +313,12 @@ module WinJSTests {
     })();
     
     var disabledTestRegistry = {
-        all:[],
-        ie11:[],
-        ie10:[],
-        chrome:["testGetAndSet_indexOfFirstVisible"],
-        safari:["testGetAndSet_indexOfFirstVisible"],
-        firefox:["testGetAndSet_indexOfFirstVisible"],
-        android:["testGetAndSet_indexOfFirstVisible"]
+        testGetAndSet_indexOfFirstVisible: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ]
     };
     Helper.disableTests(PropertyTests, disabledTestRegistry);
 }
