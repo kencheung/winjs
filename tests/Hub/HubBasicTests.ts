@@ -278,7 +278,7 @@ module HubTests {
         return HubUtils.waitForReady(control)().
             then(function () {
                 var currentScrollPosition = 42; //starting scroll position for test
-                var increment = 11; //how far to increment on each iteration
+                var increment = 22; //how far to increment on each iteration
                 var scrollRange = HubUtils.getScrollRange(control);
 
                 var index = HubUtils.findCurrentSectionOnScreen(control);

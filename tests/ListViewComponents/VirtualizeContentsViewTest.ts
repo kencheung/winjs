@@ -5790,14 +5790,12 @@ module WinJSTests {
     getPairWiseConfigurationsForBigDataStripeTests().forEach(generateStripeTests);
     
     var disabledTestRegistry = {
-        all:[],
         ie11:["testDeleteDoesNotLoseFocusRectangle"],
         ie10:[
             "testRealizeMoreThanCreated",
             "testMaxDeferredItemCleanup",
             "testScrollingDuringLazyCreation"
             ],
-        chrome:[],
         safari:[
             "testMaxDeferredItemCleanup",
             "testInsertsAnimationStartsBeforeRealizationIsDone"
@@ -5814,7 +5812,6 @@ module WinJSTests {
             ]
     };
     Helper.disableTests(VirtualizedViewTests, disabledTestRegistry);
-
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.VirtualizedViewTests");
