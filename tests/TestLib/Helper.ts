@@ -1529,70 +1529,104 @@ module Helper {
         }
     };
     
+    export enum Browsers {
+        ie10,
+        ie11,
+        edge,
+        safari,
+        chrome,
+        firefox,
+        android
+    }
+    
+    export var BrowserCombos = {
+        all:[
+            Browsers.ie10,
+            Browsers.ie11,
+            Browsers.edge,
+            Browsers.safari,
+            Browsers.chrome,
+            Browsers.firefox,
+            Browsers.android
+        ],
+        allButIE:[
+            Browsers.edge,
+            Browsers.safari,
+            Browsers.chrome,
+            Browsers.firefox,
+            Browsers.android
+        ],
+        onlyIE:[
+            Browsers.ie10,
+            Browsers.ie11
+        ]
+    }
+    
     // Useful for disabling tests in specific browsers. Disables any tests in testObj which 
     // are in the registry under the current browser.  Example usage:
     // 
     // disabledTestRegistry = {
-    //     all:[],
-    //     ie11:[],
-    //     ie10:[],
-    //     chrome:["testNoKeyDSSimulateLiveMailSendListLayout"],
-    //     safari:["testNoKeyDSSimulateLiveMailSendListLayout"],
-    //     firefox:["testNoKeyDSSimulateLiveMailSendListLayout"],
-    //     android:["testNoKeyDSSimulateLiveMailSendListLayout"],
-    //     edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
+    //     testButton: Helper.BrowserCombos.allButIE,
+    //     testClick: [
+    //         Browsers.safari,
+    //         Browsers.chrome
+    //     ]
     // };
-    // disableTests(ListViewDSTestClass, disabledTestRegistry);
+    // disableTests(TestClass, disabledTestRegistry);
     export function disableTests(testClass, registry) {
         
-        if(!registry){
+        if (!registry){
             throw "undefined registry in Helper.disableTests";
         }
         
-        if(!testClass){
+        if (!testClass){
             throw "undefined testClass in Helper.disableTests";
         }
         
-        function getDisabledTestList(){
-            var disabledList;
-            if (bowser.msie && bowser.version === "10.0"){
-                disabledList = registry.ie10 || [];
-            } else if (bowser.msie && bowser.version === "11.0"){
-                disabledList = registry.ie11 || [];
-            } else if (bowser.chrome && registry.chrome){
-                disabledList = registry.chrome || [];
-            } else if(bowser.safari && registry.safari){
-                disabledList = registry.safari || [];
-            } else if (bowser.firefox){
-                disabledList = registry.firefox || [];
-            } else if (bowser.android){
-                disabledList = registry.android || [];
-            } else if (bowser.msedge){
-                disabledList = registry.edge || [];
-            } else{
-                disabledList = [];
-            }
-            
-            if(registry.all){
-                for(var i = 0; i < registry.all.length; i++){
-                    if(disabledList.indexOf(registry.all[i]) > 0){
-                        disabledList = disabledList.concat(registry.all[i]);
-                    }
+        function getBrowsersDisabledTestList(browser){
+            var disabledList = [];
+            var testNames = Object.keys(registry);
+            for (var i = 0; i < testNames.length; i++) {
+                var testName = testNames[i];
+                if (registry[testName].indexOf(browser) > -1){
+                    disabledList.push(testName);
                 }
             }
             return disabledList;
         }
         
+        function getDisabledTestList(){
+            var disabledList;
+            if (bowser.msie && bowser.version === "10.0"){
+                disabledList = getBrowsersDisabledTestList(Helper.Browsers.ie10);
+            } else if (bowser.msie && bowser.version === "11.0"){
+                disabledList = getBrowsersDisabledTestList(Helper.Browsers.ie11);
+            } else if (bowser.chrome){
+               disabledList = getBrowsersDisabledTestList(Helper.Browsers.chrome);
+            } else if(bowser.safari){
+                disabledList = getBrowsersDisabledTestList(Helper.Browsers.safari);
+            } else if (bowser.firefox){
+               disabledList = getBrowsersDisabledTestList(Helper.Browsers.firefox);
+            } else if (bowser.android){
+                disabledList = getBrowsersDisabledTestList(Helper.Browsers.android);
+            } else if (bowser.msedge){
+                disabledList = getBrowsersDisabledTestList(Helper.Browsers.edge);
+            } else{
+                disabledList = [];
+            }
+            return disabledList;
+        }
+
         var disabledList = getDisabledTestList();
         var proto = testClass.prototype;
         
         // Create instance of test class to access methods defined in constructor
         var testInst = new testClass();
         var testKeys = Object.keys(proto).concat(Object.keys(testInst));
-        for(var i = 0; i < testKeys.length; i++){
+        for (var i = 0; i < testKeys.length; i++){
             var testKey = testKeys[i];
             var index = disabledList.indexOf(testKey);
-            if(index > -1){
+            if (index > -1){
                 disabledList.splice(index,1);
                 var disabledName = "x" + testKey;
                 proto[disabledName] = proto[testKey];
@@ -1612,7 +1646,7 @@ module Helper {
             }
         }
         
-        if(disabledList.length > 0){
+        if (disabledList.length > 0){
             var errorString = "Disabling non-existant test(s):";
             for(var i = 0; i < disabledList.length;i++){
                 errorString += disabledList[i] + " ";
