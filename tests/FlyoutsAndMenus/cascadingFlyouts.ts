@@ -1334,14 +1334,19 @@ module CorsicaTests {
             "testEntireCascadeHidesWhenAllFlyoutsLoseFocus"
             ]
     }
-    var disableTestRegistryMenu = {
+    var disabledTestRegistryMenu = {
         firefox:[
             "testFlyoutAlwaysHidesSubFlyoutsWhenItReceivesFocus",
-            "testEntireCascadeHidesWhenAllFlyoutsLoseFocus"
-            ]
+            "testEntireCascadeHidesWhenAllFlyoutsLoseFocus",
+            "testShowingAFlyout_NotAnchoredToAFlyoutInTheTheCascade_ReplacesTheCurrentCascadeWithItself"
+            ],
+        safari:[
+            "testVerticalAlignmentOfCascadedSubMenus",
+            "testHorizontalLayoutOfCascadedSubMenus"
+        ]
     }
     Helper.disableTests(CascadingFlyoutTests,disabledTestRegistryFlyout);
-    Helper.disableTests(CascadingMenuTests, disableTestRegistryMenu);
+    Helper.disableTests(CascadingMenuTests, disabledTestRegistryMenu);
 }
 
 // register the object as a test class by passing in the name

@@ -5794,7 +5794,7 @@ module WinJSTests {
         chrome:[],
         safari:[
             "testMaxDeferredItemCleanup",
-            "InsertsAnimationStartsBeforeRealizationIsDone"
+            "testInsertsAnimationStartsBeforeRealizationIsDone"
             ],
         firefox:[
             "testDeleteDoesNotLoseFocusRectangle",
