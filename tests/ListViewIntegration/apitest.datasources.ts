@@ -872,16 +872,15 @@ module WinJSTests {
     generateDataSourceChangeSetFocusOnInvalidIndexAndHeightChange("GridLayout");
     
     var disabledTestRegistry = {
-            all:[],
-            ie11:[],
-            ie10:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            chrome:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            safari:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            firefox:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            android:["testNoKeyDSSimulateLiveMailSendListLayout"],
-            edge:["testNoKeyDSSimulateLiveMailSendListLayout"]
-
-        };
+        testNoKeyDSSimulateLiveMailSendListLayout: [
+            Helper.Browsers.ie10,
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android,
+            Helper.Browsers.edge
+        ]
+    };
     Helper.disableTests(ListViewDSTestClass, disabledTestRegistry);
     
 
