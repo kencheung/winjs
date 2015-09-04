@@ -90,6 +90,7 @@ module CorsicaTests {
 
                 WinJS.Promise.timeout().then(post).then(function () {
                     LiveUnit.Assert.areEqual(count, 1);
+                    LiveUnit.Assert.areEqual(0,1);
 
                     expected = 5;
                     point.x.y = 5;
