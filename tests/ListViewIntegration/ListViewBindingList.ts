@@ -1099,11 +1099,13 @@ module Tests {
         testListViewWithFilteredListMutation: [
             Helper.Browsers.chrome,
             Helper.Browsers.safari,
-            Helper.Browsers.firefox
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
         ],
         testListViewWithSortedProjectionSpecialCases: [
             Helper.Browsers.chrome,
-            Helper.Browsers.android
+            Helper.Browsers.android,
+            Helper.Browsers.safari
         ]
     }
     Helper.disableTests(ListViewIntegrationTestingWithBindingList, disabledTestRegistry);

@@ -1337,7 +1337,7 @@ module CorsicaTests {
         testEntireCascadeHidesWhenAllFlyoutsLoseFocus: Helper.Browsers.firefox,
         testShowingAFlyout_NotAnchoredToAFlyoutInTheTheCascade_ReplacesTheCurrentCascadeWithItself: Helper.Browsers.firefox,
         testVerticalAlignmentOfCascadedSubMenus: Helper.Browsers.safari,
-        testHorizontalLayoutOfCascadedSubMenus: Helper.Browsers.safari
+        testHorizontalLayoutOfCascadedSubMenus: Helper.Browsers.safari, Helper.Browsers.chrome, Helper.Browsers.android
     }
     Helper.disableTests(CascadingFlyoutTests,disabledTestRegistryFlyout);
     Helper.disableTests(CascadingMenuTests, disabledTestRegistryMenu);

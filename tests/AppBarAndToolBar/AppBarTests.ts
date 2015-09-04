@@ -1943,7 +1943,8 @@ module CorsicaTests {
         testShowOnlyCommands:[
             Helper.Browsers.chrome,
             Helper.Browsers.safari,
-            Helper.Browsers.firefox
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
         ],
         testLightDismissWithDispose:[
             Helper.Browsers.ie11,

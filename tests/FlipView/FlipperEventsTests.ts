@@ -844,8 +844,12 @@ module WinJSTests {
             LiveUnit.LoggingCore.logComment("Done verifying '" + pageSelectedEvent + "'  event.");
         }
      }
-
-
+     var disabledTestRegistry = {
+         testFlipperEventsInsertBefore: Helper.Browsers.safari,
+         testFlipperEventsInsertAtStart: Helper.Browsers.safari,
+         testFlipperEventsInsertAtEnd: Helper.Browsers.safari
+     };
+     Helper.disableTests(EventTests, disabledTestRegistry);
 }
 
 // Register the object as a test class by passing in the name

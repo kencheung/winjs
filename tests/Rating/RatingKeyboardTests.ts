@@ -3185,7 +3185,8 @@ module WinJSTests {
             Helper.Browsers.ie10,
             Helper.Browsers.firefox,
             Helper.Browsers.chrome,
-            Helper.Browsers.android
+            Helper.Browsers.android,
+            Helper.Browsers.ie11
         ]
     }
     Helper.disableTests(RatingKeyboardTests, disabledTestRegistry);

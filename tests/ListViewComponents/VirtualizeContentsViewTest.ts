@@ -5793,12 +5793,14 @@ module WinJSTests {
             Helper.Browsers.ie10,
             Helper.Browsers.safari,
             Helper.Browsers.firefox,
-            Helper.Browsers.android
+            Helper.Browsers.android,
+            Helper.Browsers.chrome
         ],
         testScrollingDuringLazyCreation: Helper.Browsers.ie10,
         testInsertsAnimationStartsBeforeRealizationIsDone: [
             Helper.Browsers.safari,
-            Helper.Browsers.android
+            Helper.Browsers.android,
+            Helper.Browsers.chrome
         ],
         testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus: Helper.Browsers.firefox,
         testUninitialize: Helper.Browsers.firefox

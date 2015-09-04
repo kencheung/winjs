@@ -1672,12 +1672,14 @@ module WinJSTests {
             Helper.Browsers.android
         ],
         testUncontiguousSelectionReorderListLayoutBindingList_ltr: [
+            Helper.Browsers.ie11,
             Helper.Browsers.chrome,
             Helper.Browsers.safari,
             Helper.Browsers.firefox,
             Helper.Browsers.android
         ],
         testUncontiguousSelectionReorderGridLayoutBindingList_ltr: [
+            Helper.Browsers.ie11,
             Helper.Browsers.chrome,
             Helper.Browsers.safari,
             Helper.Browsers.firefox,
