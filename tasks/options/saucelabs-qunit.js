@@ -94,9 +94,9 @@
                         "result":  details.result
                     };
                 }
-                if(details.result.tests){
+                if (details.result.tests){
                     console.log("details.result.tests exists");
-                    for(var i = 0; i < details.result.tests.length; i+=1){
+                    for (var i = 0; i < details.result.tests.length; i+=1){
                         var data = {
                             name: details.result.tests[i].name,
                             component: component,
@@ -104,7 +104,7 @@
                         };
                         config.tests_results.resultsDetailed.push(data);
                     }
-                }else{
+                }else {
                     console.log("details.result.tests does not exist");
                 }
             }
