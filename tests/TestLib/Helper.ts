@@ -1575,7 +1575,7 @@ module Helper {
 
     // disableTests(TestClass, disabledTestRegistry);
     export function disableTests(testClass, registry) {
-        
+        console.log("In " + testClass.name);
         if (!registry){
             throw "undefined registry in Helper.disableTests";
         }
@@ -1583,7 +1583,7 @@ module Helper {
         if (!testClass){
             throw "undefined testClass in Helper.disableTests";
         }
-        
+        console.log("Passed Checks of" + testClass.name);
         function getBrowsersDisabledTestList(browser){
             var disabledList = [];
             var testNames = Object.keys(registry);
@@ -1609,16 +1609,19 @@ module Helper {
             } else if (bowser.msie && bowser.version === "11.0"){
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.ie11);
             } else if (bowser.chrome){
+                console.log("detected chrome");
                disabledList = getBrowsersDisabledTestList(Helper.Browsers.chrome);
             } else if(bowser.safari){
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.safari);
             } else if (bowser.firefox){
                disabledList = getBrowsersDisabledTestList(Helper.Browsers.firefox);
             } else if (bowser.android){
+                console.log("detected android");
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.android);
             } else if (bowser.msedge){
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.edge);
             } else{
+                console.log("did not detect a browser");
                 disabledList = [];
             }
 
@@ -1627,6 +1630,9 @@ module Helper {
 
 
         var disabledList = getDisabledTestList();
+        for(var i = 0; i < disabledList.length; i++){
+            console.log(testClass.name + " disabledList is: " + disabledList[i]);
+        }
         var proto = testClass.prototype;
         
         // Create instance of test class to access methods defined in constructor
