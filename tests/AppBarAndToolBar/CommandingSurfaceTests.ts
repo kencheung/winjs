@@ -2322,7 +2322,12 @@ module CorsicaTests {
         }
     }
     var disabledTestRegistry = {
-        testShowOnlyCommands:[Helper.Browsers.chrome, Helper.Browsers.safari, Helper.Browsers.firefox],
+        testShowOnlyCommands:[
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
         testOverflowDirectionProperty:[Helper.Browsers.firefox],
         testKeyboardingWithCustomContent:[Helper.Browsers.firefox]
     };
