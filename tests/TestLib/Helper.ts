@@ -1608,7 +1608,7 @@ module Helper {
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.ie10);
             } else if (bowser.msie && bowser.version === "11.0"){
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.ie11);
-            } else if (bowser.chrome){
+            } else if (bowser.chrome && !bowser.android){
                disabledList = getBrowsersDisabledTestList(Helper.Browsers.chrome);
             } else if(bowser.safari){
                 disabledList = getBrowsersDisabledTestList(Helper.Browsers.safari);
