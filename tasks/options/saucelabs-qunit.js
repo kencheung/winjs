@@ -90,7 +90,7 @@
                         "result":  details.result
                     };
                 }
-                if(details.result.tests){
+                if(details.result && details.result.tests){
                     console.log("details.result.tests exists");
                     for(var i = 0; i < details.result.tests.length; i+=1){
                         var data = {
