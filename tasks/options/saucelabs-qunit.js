@@ -51,6 +51,7 @@
     }
 
     function onTestComplete(details, callback) {
+        var passed = true;
         try {
             if (!details) {
                 throw "details argument is null ";
@@ -59,11 +60,10 @@
             if (!details.testPageUrl) {
                 throw "empty testPageUrl in details argument " + JSON.stringify(details);
             }
-
             var component = details.testPageUrl.split('/')[5];
             var browserIndex = getBrowserIndex(details.platform);
             var componentResults = getComponentResults(component);
-            var passed = true;
+            
             if (componentResults) {
                 if (details.result && typeof details.result === "object") {
                     if (details.result.failed > 0){
@@ -84,6 +84,7 @@
                         "time": Math.ceil(parseFloat(details.result.runtime) / 1000)
                     };
                 } else {
+                    passed = false;
                     console.log("======================================================\n" +
                                 "Component: " +  component + "\n" +
                                 "Note: " + details.result + "\n"
@@ -100,7 +101,7 @@
                             name: details.result.tests[i].name,
                             component: component,
                             browser: details.platform
-                        }
+                        };
                         config.tests_results.resultsDetailed.push(data);
                     }
                 }else{
