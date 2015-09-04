@@ -101,6 +101,12 @@
                         config.tests_results.resultsDetailed.push(data);
                     }
                 }else{
+                    var data = {
+                        name: "Failure",
+                        component: component,
+                        browser: details.platform
+                    }
+                    config.tests_results.resultsDetailed.push(data);
                     console.log("details.result.tests does not exist");
                 }
             }
@@ -161,6 +167,7 @@
                 "max-duration": 180,
                 testname: "winjs qunit tests",
                 tags: ["winjs"],
+                maxRetries: 1,
                 onTestComplete: onTestComplete
             }
         },
@@ -176,6 +183,7 @@
                 "max-duration": 500,
                 testname: "winjs qunit tests - extended duration",
                 tags: ["winjs"],
+                maxRetries: 1,
                 onTestComplete: onTestComplete
             }
         }
