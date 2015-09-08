@@ -5789,7 +5789,7 @@ module WinJSTests {
             Helper.Browsers.firefox
         ],
         testRealizeMoreThanCreated: Helper.Browsers.ie10,
-        testMaxDeferredItemCleanup: Helper.BrowserCombos.AllButIE11,
+        testMaxDeferredItemCleanup: Helper.BrowserCombos.allButIE11,
         testScrollingDuringLazyCreation: Helper.Browsers.ie10,
         testInsertsAnimationStartsBeforeRealizationIsDone: [
             Helper.Browsers.safari,
