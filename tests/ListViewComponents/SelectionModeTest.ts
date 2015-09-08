@@ -414,8 +414,6 @@ module WinJSTests {
             document.body.removeChild(element);
         }
 
-
-
         testStatic = function () {
             var mode = createMode(createSite({
                 selectionMode: "none",
@@ -942,6 +940,12 @@ module WinJSTests {
         };
     };
     generateDataChangeInSelChangedHandler("GridLayout");
+    
+    
+    var disabledTestRegistry = {
+        testPickerMultiMode: Helper.Browsers.ie10
+    };
+    Helper.disableTests(SelectionModeTests, disabledTestRegistry);
 
 }
 // register the object as a test class by passing in the name

@@ -732,5 +732,18 @@ module WinJSTests {
             document.documentElement.appendChild(body);
         }
     }
+    
+    var disabledTestRegistry = {
+        testIFrameRemovalUnregistersWithXYFocus: [
+            Helper.Browsers.safari,
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ],
+        testXYFocusHistory: [
+            Helper.Browsers.chrome,
+            Helper.Browsers.android
+        ]
+    };
+    Helper.disableTests(XYFocusTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.XYFocusTests");

@@ -2321,5 +2321,16 @@ module CorsicaTests {
             }).done(complete);
         }
     }
+    var disabledTestRegistry = {
+        testShowOnlyCommands:[
+            Helper.Browsers.chrome,
+            Helper.Browsers.safari,
+            Helper.Browsers.firefox,
+            Helper.Browsers.android
+        ],
+        testOverflowDirectionProperty:[Helper.Browsers.firefox],
+        testKeyboardingWithCustomContent:[Helper.Browsers.firefox]
+    };
+    Helper.disableTests(_CommandingSurfaceTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("CorsicaTests._CommandingSurfaceTests");

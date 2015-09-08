@@ -166,11 +166,12 @@
     <link type="text/css" rel="stylesheet" href="../../$(TargetFramework)/css/ui-dark.css" />                               \r\n\
     <script src="../../$(TargetFramework)/js/base.js"></script>                                                             \r\n\
     <script src="../../$(TargetFramework)/js/ui.js"></script>                                                               \r\n\
-    <script src="../../$(TargetFramework)/js/en-US/ui.strings.js"></script>                                                             \r\n\
+    <script src="../../$(TargetFramework)/js/en-US/ui.strings.js"></script>                                                 \r\n\
                                                                                                                             \r\n\
     <!-- Test framework references -->                                                                                      \r\n\
     <link type="text/css" rel="stylesheet" href="../../../node_modules/qunitjs/qunit/qunit.css" />                          \r\n\
     <script src="../../../node_modules/qunitjs/qunit/qunit.js"></script>                                                    \r\n\
+    <script src="../../../node_modules/bowser/src/bowser.js"></script>                                                      \r\n\
     <script src="../TestLib/liveToQ/liveToQ.js"></script>                                                                   \r\n\
                                                                                                                             \r\n\
     <script>                                                                                                                \r\n\

@@ -1202,8 +1202,6 @@ module WinJSTests {
                 });
         };
 
-
-
     }
 
     function generateBug17087(layoutName) {
@@ -1879,5 +1877,10 @@ module WinJSTests {
             return result;
         }
     })();
+    
+    var disabledTestRegistry = {
+        testViewportFocus: Helper.Browsers.firefox
+    };
+    Helper.disableTests(ListViewTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.ListViewTests");

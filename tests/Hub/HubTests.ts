@@ -690,5 +690,10 @@ module WinJSTests {
             });
         };
     }
+    var disabledTestRegistry = {
+        testHeaderTemplateFunction: Helper.Browsers.firefox,
+        HeaderTemplateBindingTemplate: Helper.Browsers.firefox
+    };
+    Helper.disableTests(HubTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.HubTests");
