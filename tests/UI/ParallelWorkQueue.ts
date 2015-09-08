@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved. Licensed under the MIT License. See License.txt in the project root for license information.
 // <reference path="ms-appx://$(TargetFramework)/js/WinJS.js" />
+/// <reference path="../TestLib/Helper.ts" />
 
 module WinJSTests {
 
@@ -323,6 +324,10 @@ module WinJSTests {
                 then(complete);
         }
     }
+    var disabledTestRegistry = {
+        testSimpleAsyncQueue1: Helper.Browsers.android
+    }
+    Helper.disableTests("ParallelWorkQueueTests", disabledTestRegistry);
 }
 
 LiveUnit.registerTestClass('WinJSTests.ParallelWorkQueueTests');

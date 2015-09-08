@@ -848,7 +848,8 @@ module WinJSTests {
          testFlipperEventsInsertBefore: Helper.Browsers.safari,
          testFlipperEventsInsertAtStart: Helper.Browsers.safari,
          testFlipperEventsInsertAtEnd: Helper.Browsers.safari,
-         testFlipperEventsMoveToStart: Helper.Browsers.safari
+         testFlipperEventsMoveToStart: Helper.Browsers.safari,
+         testFlipperEventsGetControl: Helper.Browsers.safari
      };
      Helper.disableTests(EventTests, disabledTestRegistry);
 }

@@ -785,6 +785,11 @@ module WinJSTests {
         };
     }
     generateSezoDispose("GridLayout");
+    
+    var disabledTestRegistry = {
+        testSezoOpacityAndVisibilityWithResizeGridLayout: Helper.Browsers.android
+    };
+    Helper.disableTests(SemanticZoomTests, disabledTestRegistry);
 }
 
 

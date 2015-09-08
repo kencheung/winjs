@@ -1579,21 +1579,21 @@ module Helper {
     }
     
     export function getCurrentBrowser(){
-        if (bowser.msie && bowser.version === "10.0"){
+        if (bowser.msie && bowser.version === "10.0") {
             return Helper.Browsers.ie10;
-        } else if (bowser.msie && bowser.version === "11.0"){
+        } else if (bowser.msie && bowser.version === "11.0") {
             return Helper.Browsers.ie11;
-        } else if (bowser.chrome){
+        } else if (bowser.chrome && !bowser.android) {
             return Helper.Browsers.chrome;
-        } else if(bowser.safari){
+        } else if(bowser.safari) {
             return Helper.Browsers.safari;
-        } else if (bowser.firefox){
+        } else if (bowser.firefox) {
             return Helper.Browsers.firefox;
-        } else if (bowser.android){
+        } else if (bowser.android) {
             return Helper.Browsers.android;
-        } else if (bowser.msedge){
+        } else if (bowser.msedge) {
             return Helper.Browsers.edge;
-        } else{
+        } else {
            throw "Unrecognized Browser";
         }
     }
