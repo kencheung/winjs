@@ -90,7 +90,6 @@ module CorsicaTests {
 
                 WinJS.Promise.timeout().then(post).then(function () {
                     LiveUnit.Assert.areEqual(count, 1);
-                    LiveUnit.Assert.areEqual(0,1);
 
                     expected = 5;
                     point.x.y = 5;
@@ -2120,6 +2119,7 @@ module CorsicaTests {
                     var Type;
                     try {
                         Type = b.define(obj);
+                        LiveUnit.Assert.areEqual(0, 1);
                     } catch (e) {
                         LiveUnit.Assert.areEqual("Unsupported data type", e.message);
                     }
