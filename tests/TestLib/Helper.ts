@@ -1635,8 +1635,8 @@ module Helper {
             }
 
             return testNames.filter(function (testName) {
-                var testNames = shallowFlatten(registry[testName]);
-                return registry[testName].indexOf(browser) !== -1;
+                var browsers = shallowFlatten(registry[testName]);
+                return browsers.length ? browsers.indexOf(browser) !== -1 : browsers === browser;
             });
         }
 
