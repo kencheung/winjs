@@ -2120,7 +2120,6 @@ module CorsicaTests {
                     var Type;
                     try {
                         Type = b.define(obj);
-                        LiveUnit.Assert.areEqual(0, 1);
                     } catch (e) {
                         LiveUnit.Assert.areEqual("Unsupported data type", e.message);
                     }
