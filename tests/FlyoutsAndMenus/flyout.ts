@@ -701,7 +701,8 @@ module CorsicaTests {
         testRemainsVisibleWhenMovingFocusInternally:[
             Helper.Browsers.chrome,
             Helper.Browsers.firefox
-        ]
+        ],
+        testShowMovesFocusSyncAndHideMovesFocusAsync: Helper.Browsers.firefox
     };
     Helper.disableTests(FlyoutTests, disabledTestRegistry);
 }

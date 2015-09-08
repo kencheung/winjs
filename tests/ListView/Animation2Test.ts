@@ -897,7 +897,8 @@ module WinJSTests {
         testOverlappingRemovalsAnimations: [
             Helper.Browsers.firefox,
             Helper.Browsers.safari,
-            Helper.Browsers.android
+            Helper.Browsers.android,
+            Helper.Browsers.ie11
         ],
         testOverlappingInsertsAnimations: Helper.Browsers.firefox,
         testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_vertical_: [

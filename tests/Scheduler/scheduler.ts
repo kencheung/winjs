@@ -3839,8 +3839,11 @@ module CorsicaTests {
     }
     
     var disabledTestRegistry = {
-        testDontYieldBetweenSameWwaPriority: Helper.Browsers.android
-    }
+        testDontYieldBetweenSameWwaPriority: [Helper.Browsers.android, Helper.Browsers.safari],
+        testYieldWhenDecreasingWwaPriorityWithoutExecutingAJob: Helper.Browsers.android,
+        testDrainNoTimeSlice: Helper.Browsers.android,
+        testDontYieldToPlatformJobInExternalDrain: Helper.Browsers.android
+    };
     Helper.disableTests(Scheduler, disabledTestRegistry);
 }
 

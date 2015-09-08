@@ -1657,10 +1657,10 @@ module WinJSTests {
     }, null, true);
     
     var disabledTestRegistry = {
-        testUncontiguousSelectionReorderGridLayoutVDS_rtl: Helper.BrowserCombos.allButIE10,
-        testUncontiguousSelectionReorderListLayoutVDS_rtl: Helper.BrowserCombos.allButIE10,
-        testUncontiguousSelectionReorderListLayoutBindingList_ltr: Helper.BrowserCombos.allButIE10,
-        testUncontiguousSelectionReorderGridLayoutBindingList_ltr: Helper.BrowserCombos.allButIE10,
+        testUncontiguousSelectionReorderGridLayoutVDS_rtl: Helper.BrowserCombos.all,
+        testUncontiguousSelectionReorderListLayoutVDS_rtl: Helper.BrowserCombos.all,
+        testUncontiguousSelectionReorderListLayoutBindingList_ltr: Helper.BrowserCombos.all,
+        testUncontiguousSelectionReorderGridLayoutBindingList_ltr: Helper.BrowserCombos.all,
     };
     Helper.disableTests(ListViewDragDropTest, disabledTestRegistry);
 

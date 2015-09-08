@@ -973,6 +973,7 @@ module CorsicaTests {
          testAdaptiveSpacing: Helper.Browsers.firefox,
          testAdaptiveSpacingConsistentInCascade: Helper.Browsers.firefox,
          testMenuInstantiation: Helper.Browsers.firefox,
+         testShowMovesFocusSyncAndHideMovesFocusAsync: Helper.Browsers.firefox
     };
     Helper.disableTests(MenuTests, disabledTestRegistry);
 }

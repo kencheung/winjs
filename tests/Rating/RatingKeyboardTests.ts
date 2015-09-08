@@ -3181,13 +3181,7 @@ module WinJSTests {
     var disabledTestRegistry = {
         testRating_Set_aria_valuenow_Random: Helper.BrowserCombos.onlyIE,
         testRating_Keyboard_Up_Multiple_CustomMax: Helper.BrowserCombos.all,
-        testRating_Keyboard_Right_Multiple_CustomMax: [
-            Helper.Browsers.ie10,
-            Helper.Browsers.firefox,
-            Helper.Browsers.chrome,
-            Helper.Browsers.android,
-            Helper.Browsers.ie11
-        ]
+        testRating_Keyboard_Right_Multiple_CustomMax: Helper.BrowserCombos.all
     }
     Helper.disableTests(RatingKeyboardTests, disabledTestRegistry);
 }

@@ -3217,5 +3217,10 @@ module CorsicaTests {
         };
 
     };
+    
+    var disabledTestRegistry = {
+        testTimeoutZeroWait: [Helper.Browsers.firefox, Helper.Browsers.safari]
+    };
+    Helper.disableTests(Promise, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("CorsicaTests.Promise");

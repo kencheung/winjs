@@ -1594,7 +1594,7 @@ module Helper {
         } else if (bowser.msedge) {
             return Helper.Browsers.edge;
         } else {
-           throw "Unrecognized Browser";
+            throw new Error("Unrecognized Browser");
         }
     }
     
@@ -1604,39 +1604,53 @@ module Helper {
     // disabledTestRegistry = {
     //     testButton: Helper.BrowserCombos.allButIE,
     //     testClick: [
-    //         Browsers.safari,
-    //         Browsers.chrome
+    //         Helper.Browsers.safari,
+    //         Helper.Browsers.chrome
+    //     ],
+    //     testTouch: [
+    //           Helper.BrowserCombos.onlyIE,
+    //           Helper.Browsers.firefox
     //     ]
     // };
-
     // disableTests(TestClass, disabledTestRegistry);
     export function disableTests(testClass, registry) {
         
         if (!registry){
-            throw "undefined registry in Helper.disableTests";
+
+            throw new Error("undefined registry in Helper.disableTests");
         }
         
         if (!testClass){
-            throw "undefined testClass in Helper.disableTests";
+            throw new Error("undefined testClass in Helper.disableTests");
         }
         
         function getDisabledTests(browser) {
             var testNames = Object.keys(registry);
-            function shallowFlatten(list){
-                for (var i = 0; i < list.length; i++){
-                    if(list[i].length){
-                        var nestedList = list.splice(i, 1)[0];
-                        for(var j = 0; j < nestedList.length; j++){
-                            list.push(nestedList[j]);
+            function shallowFlatten(list) {
+                var flatList = [];
+                for (var i = 0; i < list.length; i++) {
+                    if (Array.isArray(list[i])) {
+                        var nestedList = list[i];
+                        for (var j = 0; j < nestedList.length; j++) {
+                            flatList.push(nestedList[j]);
                         }
+                    } else {
+                        flatList.push(list[i]);
                     }
                 }
-                return list;
+                return flatList;
             }
-
+            
+            function ensureArray(obj) {
+                if (!Array.isArray(obj)) {
+                    obj = [obj];
+                }
+                return obj;
+            }
+            
             return testNames.filter(function (testName) {
-                var browsers = shallowFlatten(registry[testName]);
-                return browsers.length ? browsers.indexOf(browser) !== -1 : browsers === browser;
+                var disabledBrowsers = ensureArray(shallowFlatten(registry[testName]));
+                return disabledBrowsers.indexOf(browser) !== -1;
             });
         }
 
@@ -1646,18 +1660,18 @@ module Helper {
         // Create instance of test class to access methods defined in constructor
         var testInst = new testClass();
         var testKeys = Object.keys(proto).concat(Object.keys(testInst));
-
-        for (var i = 0; i < testKeys.length; i++){
+        for (var i = 0; i < testKeys.length; i++) {
             var testKey = testKeys[i];
             var index = disabledList.indexOf(testKey);
-            if (index > -1){
-                disabledList.splice(index,1);
+            if (index !== -1) {
+                disabledList.splice(index, 1);
                 var disabledName = "x" + testKey;
                 proto[disabledName] = proto[testKey];
                 delete proto[testKey];
-     
-                // Create a property with the disabled test name that can not be overwritten
-                // in the constructor when an instance of the class is created later
+                
+                // Create a property with the disabled test name that will not be overwritten
+                // by properties created in the test class' constructor when an instance
+                // of the class is created
                 Object.defineProperty(proto, testKey, {
                     enumerable: false,
                     get: function(){
@@ -1670,15 +1684,13 @@ module Helper {
             }
         }
         
-        if (disabledList.length > 0){
+        if (disabledList.length > 0) {
             var errorString = "Disabling non-existant test(s):";
-            for(var i = 0; i < disabledList.length;i++){
+            for (var i = 0; i < disabledList.length; i++) {
                 errorString += disabledList[i] + " ";
             }
-            throw errorString;
+            throw new Error(errorString);
         }
-        
-        return;
     };
 
     // Useful for when you have a large number of configurations but don't want to
