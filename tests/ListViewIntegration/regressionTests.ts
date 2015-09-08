@@ -705,16 +705,10 @@ module WinJSTests {
 
     }
     
-     var disabledTestRegistry = {
+    var disabledTestRegistry = {
         testWin8_725480: Helper.BrowserCombos.all,
-        testWinBlue_148641: [
-            Helper.Browsers.ie10,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.chrome,
-            Helper.Browsers.android
-        ]
-    }
+        testWinBlue_148641: Helper.BrowserCombos.allButIE11
+    };
     Helper.disableTests(ListViewRegression, disabledTestRegistry);
 }
 

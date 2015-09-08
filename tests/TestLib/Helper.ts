@@ -1567,6 +1567,14 @@ module Helper {
             Browsers.chrome,
             Browsers.firefox,
             Browsers.android
+        ],
+        allButIE10:[
+            Browsers.ie11,
+            Browsers.edge,
+            Browsers.safari,
+            Browsers.chrome,
+            Browsers.firefox,
+            Browsers.android
         ]
     }
     

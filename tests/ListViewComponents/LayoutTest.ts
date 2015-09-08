@@ -1287,36 +1287,17 @@ module WinJSTests {
     generateRecalculateItemPosition("GridLayout");
     
     var disabledTestRegistry = {
-        testFirstLastDisplayedInGridLayout_GridLayout: [
-            Helper.Browsers.ie10,
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
-        testRestoringScrollpos: [
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
-        testHeightAutoLayoutListLayout: [
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
-        testHeightAutoLayoutGridLayout: [
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ]
+        testFirstLastDisplayedInGridLayout_GridLayout: Helper.BrowserCombos.allButIE11,
+        testRestoringScrollpos: Helper.BrowserCombos.allButIE11,
+        testHeightAutoLayoutListLayout: Helper.BrowserCombos.allButIE11,
+        testHeightAutoLayoutGridLayout: Helper.BrowserCombos.allButIE11
     };
     
     Helper.disableTests(LayoutTestsExtra, disabledTestRegistry);
 
 }
+
+
 
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.LayoutTestsExtra");

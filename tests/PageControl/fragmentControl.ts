@@ -34,10 +34,6 @@ module WinJSTests {
 
 
     export class FragmentControl {
-        
-        disabledTestDirectory = {
-            android:["testEmbeddedJSCSS"]
-        }
 
         testFragmentControlBasicRender = function (complete) {
             var fragfile = "$(TESTDATA)/FragmentControlBasic.html";

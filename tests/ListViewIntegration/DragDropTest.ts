@@ -1657,34 +1657,10 @@ module WinJSTests {
     }, null, true);
     
     var disabledTestRegistry = {
-        testUncontiguousSelectionReorderGridLayoutVDS_rtl: [
-            Helper.Browsers.ie11,
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
-        testUncontiguousSelectionReorderListLayoutVDS_rtl: [
-            Helper.Browsers.ie11,
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
-        testUncontiguousSelectionReorderListLayoutBindingList_ltr: [
-            Helper.Browsers.ie11,
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
-        testUncontiguousSelectionReorderGridLayoutBindingList_ltr: [
-            Helper.Browsers.ie11,
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ]
+        testUncontiguousSelectionReorderGridLayoutVDS_rtl: Helper.BrowserCombos.allButIE10,
+        testUncontiguousSelectionReorderListLayoutVDS_rtl: Helper.BrowserCombos.allButIE10,
+        testUncontiguousSelectionReorderListLayoutBindingList_ltr: Helper.BrowserCombos.allButIE10,
+        testUncontiguousSelectionReorderGridLayoutBindingList_ltr: Helper.BrowserCombos.allButIE10,
     };
     Helper.disableTests(ListViewDragDropTest, disabledTestRegistry);
 
