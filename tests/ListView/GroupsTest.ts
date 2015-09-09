@@ -223,7 +223,6 @@ module WinJSTests {
 
         }
 
-
         
         // Verifies that when you read indexOfFirstVisible after setting it, it returns the
         // value that you set it to. It verifies this under the following conditions:
@@ -1507,6 +1506,7 @@ module WinJSTests {
         GroupsTests.prototype[testName].timeout = 60000;
     };
     generateLoadingStateScrolling("GridLayout");
+    
 }
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.GroupsTests");

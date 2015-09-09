@@ -77,8 +77,6 @@ module WinJSTests {
             }
         }
 
-
-
         //This test is to test the slideUp function by passing one element.
         testSlideUp(signalTestCaseCompleted) {
             var diffX = 0;

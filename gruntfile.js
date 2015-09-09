@@ -67,5 +67,6 @@
         // Other tasks
         grunt.registerTask("lint", ["jshint", "jscs"]);
         grunt.registerTask("saucelabs", ["connect:saucelabs", "saucelabs-qunit", "post-tests-results"]);
+        grunt.registerTask("saucelabs-bulk", ["connect:saucelabs", "saucelabs-qunit", "save-test-results"]);
     };
 })();
