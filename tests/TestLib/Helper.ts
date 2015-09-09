@@ -1615,12 +1615,11 @@ module Helper {
     // disableTests(TestClass, disabledTestRegistry);
     export function disableTests(testClass, registry) {
         
-        if (!registry){
-
+        if (!registry) {
             throw new Error("undefined registry in Helper.disableTests");
         }
         
-        if (!testClass){
+        if (!testClass) {
             throw new Error("undefined testClass in Helper.disableTests");
         }
         
@@ -1660,6 +1659,7 @@ module Helper {
         // Create instance of test class to access methods defined in constructor
         var testInst = new testClass();
         var testKeys = Object.keys(proto).concat(Object.keys(testInst));
+
         for (var i = 0; i < testKeys.length; i++) {
             var testKey = testKeys[i];
             var index = disabledList.indexOf(testKey);

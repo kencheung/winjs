@@ -326,8 +326,8 @@ module WinJSTests {
     }
     var disabledTestRegistry = {
         testSimpleAsyncQueue1: Helper.Browsers.android
-    }
-    Helper.disableTests("ParallelWorkQueueTests", disabledTestRegistry);
+    };
+    Helper.disableTests(ParallelWorkQueueTests, disabledTestRegistry);
 }
 
 LiveUnit.registerTestClass('WinJSTests.ParallelWorkQueueTests');

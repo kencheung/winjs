@@ -1297,7 +1297,5 @@ module WinJSTests {
 
 }
 
-
-
 // register the object as a test class by passing in the name
 LiveUnit.registerTestClass("WinJSTests.LayoutTestsExtra");

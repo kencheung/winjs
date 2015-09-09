@@ -702,7 +702,6 @@ module WinJSTests {
             });
         }
 
-
     }
     
     var disabledTestRegistry = {

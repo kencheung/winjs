@@ -63,6 +63,7 @@
             var component = details.testPageUrl.split('/')[5];
             var browserIndex = getBrowserIndex(details.platform);
             var componentResults = getComponentResults(component);
+            
             if (componentResults) {
                 if (details.result && typeof details.result === "object") {
                     console.log("======================================================\n" +
@@ -88,6 +89,25 @@
                         "url": details.url,
                         "result":  details.result
                     };
+                }
+                if(details.result && details.result.tests){
+                    console.log("details.result.tests exists");
+                    for(var i = 0; i < details.result.tests.length; i+=1){
+                        var data = {
+                            name: details.result.tests[i].name,
+                            component: component,
+                            browser: details.platform
+                        }
+                        config.tests_results.resultsDetailed.push(data);
+                    }
+                }else{
+                    var data = {
+                        name: "Failure",
+                        component: component,
+                        browser: details.platform
+                    }
+                    config.tests_results.resultsDetailed.push(data);
+                    console.log("details.result.tests does not exist");
                 }
             }
 
@@ -137,6 +157,8 @@
     module.exports = {
         all: {
             options: {
+                username: "winjs",
+                key: "26c17025-4f79-4313-ab42-c5f77a7ece4b",
                 urls: testUrls.all,
                 build: process.env.TRAVIS_JOB_ID,
                 testInterval: 1000,
@@ -145,11 +167,14 @@
                 "max-duration": 180,
                 testname: "winjs qunit tests",
                 tags: ["winjs"],
+                maxRetries: 1,
                 onTestComplete: onTestComplete
             }
         },
         allWithExtendedDuration: {
             options: {
+                username: "winjs",
+                key: "26c17025-4f79-4313-ab42-c5f77a7ece4b",
                 urls: testUrls.allWithExtendedDuration,
                 build: process.env.TRAVIS_JOB_ID,
                 testInterval: 1000,
@@ -158,6 +183,7 @@
                 "max-duration": 500,
                 testname: "winjs qunit tests - extended duration",
                 tags: ["winjs"],
+                maxRetries: 1,
                 onTestComplete: onTestComplete
             }
         }

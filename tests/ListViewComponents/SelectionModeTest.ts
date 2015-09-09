@@ -414,8 +414,6 @@ module WinJSTests {
             document.body.removeChild(element);
         }
 
-
-
         testStatic = function () {
             var mode = createMode(createSite({
                 selectionMode: "none",
