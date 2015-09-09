@@ -1648,7 +1648,7 @@ module Helper {
             }
             
             return testNames.filter(function (testName) {
-                var disabledBrowsers = ensureArray(shallowFlatten(registry[testName]));
+                var disabledBrowsers = shallowFlatten(ensureArray(registry[testName]));
                 return disabledBrowsers.indexOf(browser) !== -1;
             });
         }
