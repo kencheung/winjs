@@ -51,6 +51,7 @@
     }
 
     function onTestComplete(details, callback) {
+        var passed = true;
         try {
             if (!details) {
                 throw "details argument is null ";
@@ -59,13 +60,15 @@
             if (!details.testPageUrl) {
                 throw "empty testPageUrl in details argument " + JSON.stringify(details);
             }
-
             var component = details.testPageUrl.split('/')[5];
             var browserIndex = getBrowserIndex(details.platform);
             var componentResults = getComponentResults(component);
             
             if (componentResults) {
                 if (details.result && typeof details.result === "object") {
+                    if (details.result.failed > 0){
+                        passed = false;
+                    }
                     console.log("======================================================\n" +
                                 "Passed: " + details.result.passed + "\n" +
                                 "Failed: " + details.result.failed + "\n" +
@@ -81,6 +84,7 @@
                         "time": Math.ceil(parseFloat(details.result.runtime) / 1000)
                     };
                 } else {
+                    passed = false;
                     console.log("======================================================\n" +
                                 "Component: " +  component + "\n" +
                                 "Note: " + details.result + "\n"
@@ -101,7 +105,8 @@
                         config.tests_results.resultsDetailed.push(data);
                     }
                 } else {
-                    var data = {
+					passed = false;
+					 var data = {
                         name: "Failure",
                         component: component,
                         browser: details.platform
@@ -123,7 +128,7 @@
         } finally {
             // Always indicate that the test passed so that we can finish the grunt task successfully.
             // The config.tests_results object will store the correct information for each the test run.
-            callback(null, true);
+            callback(null, passed);
         }
     }
 
@@ -167,7 +172,7 @@
                 "max-duration": 180,
                 testname: "winjs qunit tests",
                 tags: ["winjs"],
-                maxRetries: 1,
+				maxRetries: 2,
                 onTestComplete: onTestComplete
             }
         },
@@ -183,7 +188,7 @@
                 "max-duration": 500,
                 testname: "winjs qunit tests - extended duration",
                 tags: ["winjs"],
-                maxRetries: 1,
+				maxRetries: 2,
                 onTestComplete: onTestComplete
             }
         }
