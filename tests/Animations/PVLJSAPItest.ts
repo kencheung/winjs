@@ -1591,7 +1591,8 @@ module WinJSTests {
     }
     
     var disabledTestRegistry = {
-        testSlideLeftOut: Helper.Browsers.ie10
+        testSlideLeftOut: Helper.Browsers.ie10,
+		testSlideDown: Helper.Browsers.ie10
     }
     Helper.disableTests(PVLJSFunctionTests, disabledTestRegistry);
 }

@@ -702,5 +702,9 @@ module ContentDialogTests {
             testRoot.appendChild(iframe);
         }
     }
+	
+	var disabledTestRegistry = {
+		testPositioningAndSizing: Helper.Browsers.safari
+	}
 }
 LiveUnit.registerTestClass("ContentDialogTests.BasicTests");

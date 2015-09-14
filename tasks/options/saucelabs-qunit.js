@@ -90,22 +90,22 @@
                         "result":  details.result
                     };
                 }
-                if(details.result && details.result.tests){
+                if (details.result && details.result.tests) {
                     console.log("details.result.tests exists");
-                    for(var i = 0; i < details.result.tests.length; i+=1){
+                    for (var i = 0; i < details.result.tests.length; i+=1) {
                         var data = {
                             name: details.result.tests[i].name,
                             component: component,
                             browser: details.platform
-                        }
+                        };
                         config.tests_results.resultsDetailed.push(data);
                     }
-                }else{
+                } else {
                     var data = {
                         name: "Failure",
                         component: component,
                         browser: details.platform
-                    }
+                    };
                     config.tests_results.resultsDetailed.push(data);
                     console.log("details.result.tests does not exist");
                 }

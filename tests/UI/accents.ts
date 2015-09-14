@@ -246,7 +246,9 @@ module CorsicaTests {
     
     var disabledTestRegistry = {
         testCreateAccentRuleSimple: Helper.Browsers.android,
-        testCreateAccentRuleInverseHover: Helper.Browsers.android
+        testCreateAccentRuleInverseHover: Helper.Browsers.android,
+        testCreateAccentRuleInverseHoverWithWhitespace: Helper.Browsers.android,
+		testCreateAccentRuleInverse: Helper.Browsers.android
     };
     Helper.disableTests(AccentTests, disabledTestRegistry);
 }

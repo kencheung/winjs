@@ -1661,6 +1661,7 @@ module WinJSTests {
         testUncontiguousSelectionReorderListLayoutVDS_rtl: Helper.BrowserCombos.all,
         testUncontiguousSelectionReorderListLayoutBindingList_ltr: Helper.BrowserCombos.all,
         testUncontiguousSelectionReorderGridLayoutBindingList_ltr: Helper.BrowserCombos.all,
+		testDragEnterInReorderableSourceListLayoutBindingList_ltr: Helper.Browsers.android
     };
     Helper.disableTests(ListViewDragDropTest, disabledTestRegistry);
 

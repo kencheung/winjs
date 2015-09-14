@@ -1096,16 +1096,12 @@ module Tests {
         }
     }
     var disabledTestRegistry = {
-        testListViewWithFilteredListMutation: [
-            Helper.Browsers.chrome,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.android
-        ],
+        testListViewWithFilteredListMutation: Helper.BrowserCombos.allButIE10,
         testListViewWithSortedProjectionSpecialCases: [
             Helper.Browsers.chrome,
             Helper.Browsers.android,
-            Helper.Browsers.safari
+            Helper.Browsers.safari,
+			Helper.Browsers.firefox
         ]
     }
     Helper.disableTests(ListViewIntegrationTestingWithBindingList, disabledTestRegistry);

@@ -55,7 +55,7 @@
                     console.log("Saving test results...");
 					var version = 0;
                     var fullName = fileName;
-					if(fs.existsSync(fullName)){
+					if (fs.existsSync(fullName)) {
 						fullName = fileName + version;
 						version+=1;
 					}

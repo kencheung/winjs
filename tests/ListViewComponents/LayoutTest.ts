@@ -1041,7 +1041,7 @@ module WinJSTests {
 
         Helper.ListView.runTests(listview, tests);
     };
-    generate("testEnsureVisibleWithAsymmetricalM   arginsInGridLayout", "GridLayout", testEnsureVisibleWithAsymmetricalMarginsInGrid, "asymmetricalMarginsTemplate", "asymmetricalMarginsPlaceholder");
+    generate("testEnsureVisibleWithAsymmetricalMarginsInGridLayout", "GridLayout", testEnsureVisibleWithAsymmetricalMarginsInGrid, "asymmetricalMarginsTemplate", "asymmetricalMarginsPlaceholder");
 
     var testEnsureVisibleWithAsymmetricalMarginsInList = function (element, listview, complete) {
         var tests = [
@@ -1290,7 +1290,8 @@ module WinJSTests {
         testFirstLastDisplayedInGridLayout_GridLayout: Helper.BrowserCombos.allButIE11,
         testRestoringScrollpos: Helper.BrowserCombos.allButIE11,
         testHeightAutoLayoutListLayout: Helper.BrowserCombos.allButIE11,
-        testHeightAutoLayoutGridLayout: Helper.BrowserCombos.allButIE11
+        testHeightAutoLayoutGridLayout: Helper.BrowserCombos.allButIE11,
+		testSingleRealizationWithIndexOfFirstVisible: [Helper.Browsers.ie10, Helper.Browsers.safari]
     };
     
     Helper.disableTests(LayoutTestsExtra, disabledTestRegistry);

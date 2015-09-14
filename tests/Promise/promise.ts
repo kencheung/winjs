@@ -3220,7 +3220,8 @@ module CorsicaTests {
     };
     
     var disabledTestRegistry = {
-        testTimeoutZeroWait: [Helper.Browsers.firefox, Helper.Browsers.safari]
+        testTimeoutZeroWait: [Helper.Browsers.firefox, Helper.Browsers.safari],
+		testNestedCancelationRecovery: Helper.Browsers.android
     };
     Helper.disableTests(Promise, disabledTestRegistry);
 }

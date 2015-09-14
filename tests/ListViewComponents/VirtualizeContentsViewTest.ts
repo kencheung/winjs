@@ -5788,16 +5788,19 @@ module WinJSTests {
             Helper.Browsers.ie11,
             Helper.Browsers.firefox
         ],
-        testRealizeMoreThanCreated: Helper.Browsers.ie10,
+        testRealizeMoreThanCreated: [Helper.Browsers.ie10, Helper.Browsers.safari],
         testMaxDeferredItemCleanup: Helper.BrowserCombos.allButIE11,
-        testScrollingDuringLazyCreation: Helper.Browsers.ie10,
+        testScrollingDuringLazyCreation: [Helper.Browsers.ie10, Helper.Browsers.safari],
         testInsertsAnimationStartsBeforeRealizationIsDone: [
             Helper.Browsers.safari,
             Helper.Browsers.android,
             Helper.Browsers.chrome
         ],
         testAddingItemToTheEndOfListWhileLastItemHadFocusDoesNotLoseFocus: Helper.Browsers.firefox,
-        testUninitialize: Helper.Browsers.firefox
+        testUninitialize: [Helper.Browsers.firefox, Helper.Browsers.safari],
+		testPanningUsingAsyncDataSourceWithMultiStageRenderers: Helper.Browsers.safari,
+		testAriaWorkerCancellation: Helper.Browsers.safari,
+		testDeferContainerCreationUntilSeZoZoomCompletes: Helper.Browsers.android
     };
     Helper.disableTests(VirtualizedViewTests, disabledTestRegistry);
 }

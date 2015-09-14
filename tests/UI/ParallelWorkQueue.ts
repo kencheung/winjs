@@ -325,7 +325,12 @@ module WinJSTests {
         }
     }
     var disabledTestRegistry = {
-        testSimpleAsyncQueue1: Helper.Browsers.android
+        testSimpleAsyncQueue1: Helper.Browsers.android,
+		testSimpleAsyncQueue2: Helper.Browsers.android,
+		testSimpleAsyncQueue6: Helper.Browsers.android,
+		testQuickCancel6: Helper.Browsers.android,
+		testRecursiveChaining: Helper.Browsers.android,
+		testSimpleAsyncQueueSort1: Helper.Browsers.android
     };
     Helper.disableTests(ParallelWorkQueueTests, disabledTestRegistry);
 }
