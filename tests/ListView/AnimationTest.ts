@@ -400,6 +400,7 @@ module WinJSTests {
         };
     };
     generateAnimationEventsWithAnimationsDisabled("GridLayout");
+    
      var disabledTestRegistry = {
         testDelayedEntranceAnimationGridLayout: [
             Helper.Browsers.safari,
@@ -416,7 +417,7 @@ module WinJSTests {
             Helper.Browsers.chrome,
             Helper.Browsers.android
         ]
-    }
+    };
     Helper.disableTests(ListViewAnimationTest, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.ListViewAnimationTest");

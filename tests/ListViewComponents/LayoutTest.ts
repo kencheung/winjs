@@ -105,8 +105,6 @@ module WinJSTests {
             WinJS.Utilities.disposeSubTree(testRootEl);
             document.body.removeChild(testRootEl);
         }
-        
-        testFirstLastDisplayedInGrid
 
         testFirstVisibleInConstructor(complete) {
             function test(layoutName) {

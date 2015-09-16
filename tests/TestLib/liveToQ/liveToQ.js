@@ -478,10 +478,9 @@
             
             AllObjectKeys(testModule).forEach(function (key) {
                 if (key.indexOf("test") !== 0) {
-                    console.log("rejected " + key);
                     return;
                 }
-                console.log("accepted " + key);
+
                 var testName = key.substr("test".length);
                 var testFunc = testModule[key];
                 if (testFunc.length) {

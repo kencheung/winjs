@@ -924,7 +924,7 @@ module AutoSuggestBoxTests {
         testChooseSuggestionOnEnterEnabled: Helper.Browsers.firefox,
         testArrowKeysOnSuggestionFlyout: Helper.Browsers.firefox,
         testArrowKeysOnSuggestionFlyoutAbove: Helper.Browsers.firefox,
-    }
+    };
     Helper.disableTests(AutoSuggestBoxTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("AutoSuggestBoxTests.AutoSuggestBoxTests");

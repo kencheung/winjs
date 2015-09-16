@@ -1934,8 +1934,8 @@ module CorsicaTests {
         testLightDismissWithTap(complete) {
             this._testLightDismissWithTrigger((appBar) => { _LightDismissService._clickEaterTapped(); }).then(complete);
         }
-        
     }
+    
      var disabledTestRegistry = {
         testLightDismissWithClose:[Helper.Browsers.ie11,
             Helper.Browsers.firefox

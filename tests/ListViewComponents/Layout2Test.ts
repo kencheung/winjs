@@ -2815,14 +2815,8 @@ module WinJSTests {
     };
     
     var disabledTestRegistry = {
-        testDefaultItemsContainerMargins: [
-            Helper.Browsers.ie10,
-            Helper.Browsers.safari,
-            Helper.Browsers.firefox,
-            Helper.Browsers.chrome,
-            Helper.Browsers.android
-        ]
-    }
+        testDefaultItemsContainerMargins: Helper.BrowserCombos.allButIE11
+    };
     Helper.disableTests(LVLayoutTests, disabledTestRegistry);
 
 }
