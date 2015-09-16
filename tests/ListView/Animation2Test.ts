@@ -917,7 +917,7 @@ module WinJSTests {
         testPositioningOfDeletedItem_RTL_GroupedListLayout_HeaderPositionLeft_horizontal_: Helper.Browsers.ie11,
         testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionTop_horizontal_: Helper.Browsers.ie11,
         testPositioningOfDeletedItem_LTR_GroupedListLayout_HeaderPositionLeft_vertical_: Helper.Browsers.ie11 
-    }
+    };
     Helper.disableTests(ListViewAnimation2Test, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.ListViewAnimation2Test");

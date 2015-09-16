@@ -1557,7 +1557,7 @@ module CorsicaTests {
          testDismissesWhenLosingFocus: [Helper.Browsers.ie11, Helper.Browsers.chrome, Helper.Browsers.firefox],
          testMoveFocusFromMenuToAppBar: [Helper.Browsers.ie11, Helper.Browsers.chrome, Helper.Browsers.firefox],
          testRemainsVisibleWhenMovingFocusInternally: [Helper.Browsers.chrome, Helper.Browsers.firefox],
-         testFocusLeavesMenuAndAppBar: [Helper.Browsers.chrome, Helper.Browsers.firefox],
+         testFocusLeavesMenuAndAppBar: [Helper.Browsers.ie11, Helper.Browsers.chrome, Helper.Browsers.firefox],
          testSingleAppBarLightDismissFocusWrapping: [Helper.Browsers.chrome, Helper.Browsers.firefox]
     };
     Helper.disableTests(LegacyAppBarTests, disabledTestRegistry);

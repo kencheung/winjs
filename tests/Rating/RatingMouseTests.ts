@@ -35,6 +35,12 @@ module WinJSTests {
         };
 
 
+
+
+
+
+
+
         //-----------------------------------------------------------------------------------
 
         testRating_Hover_Lowest_ShowingAverage = function (signalTestCaseCompleted) {

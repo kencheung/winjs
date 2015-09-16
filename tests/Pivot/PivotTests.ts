@@ -397,6 +397,8 @@ module WinJSTests {
 
     export class PivotTests {
 
+
+
         setUp() {
             pivotWrapperEl = document.createElement('div');
             pivotWrapperEl.style.cssText = "width: " + pivotWidth + "px; height: 480px; background-color: #777;";
