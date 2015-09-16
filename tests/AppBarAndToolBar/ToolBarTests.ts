@@ -2093,8 +2093,8 @@ module CorsicaTests {
             };
             this._element.appendChild(iframe);
         }
-
     }
+    
     var disabledTestRegistry = {
         testLightDismissWithClose:[Helper.Browsers.ie11, Helper.Browsers.firefox],
         testLightDismissWithDispose:[Helper.Browsers.ie11, Helper.Browsers.firefox],

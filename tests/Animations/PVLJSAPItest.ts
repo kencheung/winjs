@@ -77,6 +77,8 @@ module WinJSTests {
             }
         }
 
+
+
         //This test is to test the slideUp function by passing one element.
         testSlideUp(signalTestCaseCompleted) {
             var diffX = 0;
@@ -1593,7 +1595,7 @@ module WinJSTests {
     var disabledTestRegistry = {
         testSlideLeftOut: Helper.Browsers.ie10,
 		testSlideDown: Helper.Browsers.ie10
-    }
+    };
     Helper.disableTests(PVLJSFunctionTests, disabledTestRegistry);
 }
 LiveUnit.registerTestClass("WinJSTests.PVLJSFunctionTests");

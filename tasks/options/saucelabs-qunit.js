@@ -51,7 +51,6 @@
     }
 
     function onTestComplete(details, callback) {
-        var passed = true;
         try {
             if (!details) {
                 throw "details argument is null ";
@@ -60,15 +59,15 @@
             if (!details.testPageUrl) {
                 throw "empty testPageUrl in details argument " + JSON.stringify(details);
             }
+			
             var component = details.testPageUrl.split('/')[5];
             var browserIndex = getBrowserIndex(details.platform);
             var componentResults = getComponentResults(component);
-            
             if (componentResults) {
                 if (details.result && typeof details.result === "object") {
-                    if (details.result.failed > 0){
-                        passed = false;
-                    }
+					// Tests completed successfully
+                    config.tests_results.passed = false;
+					
                     console.log("======================================================\n" +
                                 "Passed: " + details.result.passed + "\n" +
                                 "Failed: " + details.result.failed + "\n" +
@@ -84,7 +83,9 @@
                         "time": Math.ceil(parseFloat(details.result.runtime) / 1000)
                     };
                 } else {
-                    passed = false;
+					// Tests did not complete
+                    config.tests_results.passed = false;
+					
                     console.log("======================================================\n" +
                                 "Component: " +  component + "\n" +
                                 "Note: " + details.result + "\n"
@@ -93,26 +94,6 @@
                         "url": details.url,
                         "result":  details.result
                     };
-                }
-                if (details.result && details.result.tests) {
-                    console.log("details.result.tests exists");
-                    for (var i = 0; i < details.result.tests.length; i+=1) {
-                        var data = {
-                            name: details.result.tests[i].name,
-                            component: component,
-                            browser: details.platform
-                        };
-                        config.tests_results.resultsDetailed.push(data);
-                    }
-                } else {
-					passed = false;
-					 var data = {
-                        name: "Failure",
-                        component: component,
-                        browser: details.platform
-                    };
-                    config.tests_results.resultsDetailed.push(data);
-                    console.log("details.result.tests does not exist");
                 }
             }
 
@@ -162,8 +143,6 @@
     module.exports = {
         all: {
             options: {
-                username: "winjs",
-                key: "26c17025-4f79-4313-ab42-c5f77a7ece4b",
                 urls: testUrls.all,
                 build: process.env.TRAVIS_JOB_ID,
                 testInterval: 1000,
@@ -178,8 +157,6 @@
         },
         allWithExtendedDuration: {
             options: {
-                username: "winjs",
-                key: "26c17025-4f79-4313-ab42-c5f77a7ece4b",
                 urls: testUrls.allWithExtendedDuration,
                 build: process.env.TRAVIS_JOB_ID,
                 testInterval: 1000,
