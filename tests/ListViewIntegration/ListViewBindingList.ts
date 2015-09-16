@@ -1103,7 +1103,7 @@ module Tests {
             Helper.Browsers.safari,
 			Helper.Browsers.firefox
         ]
-    }
+    };
     Helper.disableTests(ListViewIntegrationTestingWithBindingList, disabledTestRegistry);
 
 }
