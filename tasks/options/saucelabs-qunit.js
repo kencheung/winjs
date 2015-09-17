@@ -66,7 +66,9 @@
             if (componentResults) {
                 if (details.result && typeof details.result === "object") {
 					// Tests completed successfully
-                    config.tests_results.passed = false;
+                    if (details.result.failed > 0){
+                        config.tests_results.passed = false;
+                    }
 					
                     console.log("======================================================\n" +
                                 "Passed: " + details.result.passed + "\n" +
@@ -109,7 +111,7 @@
         } finally {
             // Always indicate that the test passed so that we can finish the grunt task successfully.
             // The config.tests_results object will store the correct information for each the test run.
-            callback(null, true);
+            callback(null, passed);
         }
     }
 
@@ -151,7 +153,7 @@
                 "max-duration": 180,
                 testname: "winjs qunit tests",
                 tags: ["winjs"],
-				maxRetries: 2,
+				maxRetries: 3,
                 onTestComplete: onTestComplete
             }
         },
@@ -165,7 +167,7 @@
                 "max-duration": 500,
                 testname: "winjs qunit tests - extended duration",
                 tags: ["winjs"],
-				maxRetries: 2,
+				maxRetries: 3,
                 onTestComplete: onTestComplete
             }
         }
