@@ -10,6 +10,8 @@ script:
 - grunt saucelabs
 after_success:
 - grunt update-winjs-controls
+after_failure:
+- grunt post-tests-results
 
 env:
   global:
