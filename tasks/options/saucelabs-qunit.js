@@ -111,7 +111,7 @@
         } finally {
             // Always indicate that the test passed so that we can finish the grunt task successfully.
             // The config.tests_results object will store the correct information for each the test run.
-            callback(null, passed);
+            callback(null, true);
         }
     }
 
