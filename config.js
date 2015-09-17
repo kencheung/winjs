@@ -51,7 +51,7 @@
         "date": new Date(),
         "environment": [],
         "results":  [],
-        "passed": false
+        "passed": true
     };
     
 })();
