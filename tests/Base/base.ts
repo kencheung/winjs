@@ -33,7 +33,7 @@ module CorsicaTests {
             LiveUnit.Assert.isTrue("TestNamespace" in Test);
             LiveUnit.Assert.isTrue("foo" in Test.TestNamespace);
             LiveUnit.Assert.areEqual(33, Test.TestNamespace.foo);
-
+            LiveUnit.Assert.areEqual(1,2);
             LiveUnit.Assert.isTrue("bar" in Test.TestNamespace);
             LiveUnit.Assert.areEqual(42, Test.TestNamespace.bar());
         };
