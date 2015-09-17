@@ -33,7 +33,7 @@
                         (hour < 10 ? "0" + hour : hour) + ":" +
                         (mins < 10 ? "0" + mins : mins) + ":" +
                         (secs < 10 ? "0" + secs : secs) + " UTC";
-
+                    console.log("tests_results.results length: " + config.tests_results.results.length);
                     config.tests_results.results = sortByComponentName(config.tests_results.results);
                     var data = JSON.stringify(config.tests_results);
                     console.log("Posting test results...");

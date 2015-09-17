@@ -227,6 +227,7 @@ module CorsicaTests {
 
                 WinJS.Promise.timeout().then(post).then(function () {
                     LiveUnit.Assert.areEqual(1, count);
+                    LiveUnit.Assert.areEqual(1,0);
 
                     token.cancel();
 
