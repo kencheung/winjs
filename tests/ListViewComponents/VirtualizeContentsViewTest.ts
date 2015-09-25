@@ -5789,7 +5789,10 @@ module WinJSTests {
         testUninitialize: [Helper.Browsers.firefox, Helper.Browsers.safari],
 		testPanningUsingAsyncDataSourceWithMultiStageRenderers: Helper.Browsers.safari,
 		testAriaWorkerCancellation: Helper.Browsers.safari,
-		testDeferContainerCreationUntilSeZoZoomCompletes: Helper.Browsers.android
+		testDeferContainerCreationUntilSeZoZoomCompletes: [
+			Helper.Browsers.android,
+			Helper.Browsers.ie10
+		]
     };
     Helper.disableTests(VirtualizedViewTests, disabledTestRegistry);
 }
