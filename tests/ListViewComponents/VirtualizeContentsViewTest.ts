@@ -5791,7 +5791,8 @@ module WinJSTests {
 		testAriaWorkerCancellation: Helper.Browsers.safari,
 		testDeferContainerCreationUntilSeZoZoomCompletes: [
 			Helper.Browsers.android,
-			Helper.Browsers.ie10
+			Helper.Browsers.ie10,
+			Helper.Browsers.chrome
 		]
     };
     Helper.disableTests(VirtualizedViewTests, disabledTestRegistry);
