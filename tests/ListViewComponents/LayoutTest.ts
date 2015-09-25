@@ -1287,8 +1287,8 @@ module WinJSTests {
     var disabledTestRegistry = {
         testFirstLastDisplayedInGridLayout_GridLayout: Helper.BrowserCombos.allButIE11,
         testHeightAutoLayoutListLayout: Helper.BrowserCombos.allButIE11,
-        testHeightAutoLayoutGridLayout: Helper.BrowserCombos.allButIE11,
 		testRestoringScrollpos: Helper.BrowserCombos.all,
+        testHeightAutoLayoutGridLayout: Helper.BrowserCombos.allButIE11,
 		testSingleRealizationWithIndexOfFirstVisible: [Helper.Browsers.ie10, Helper.Browsers.safari]
     };
     
