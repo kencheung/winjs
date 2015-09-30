@@ -1291,7 +1291,7 @@ module WinJSTests {
 		testRestoringScrollpos: Helper.BrowserCombos.all,
 		testSingleRealizationWithIndexOfFirstVisible: [Helper.Browsers.ie10, Helper.Browsers.safari]
     };
-    //
+    
     Helper.disableTests(LayoutTestsExtra, disabledTestRegistry);
 
 }
